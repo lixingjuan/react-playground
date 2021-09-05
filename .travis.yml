@@ -12,7 +12,7 @@ before_install:
 # install:
 #   - npm install # 安装编译工具
 script:
-  - npm run build
+  - yarn build
 after_script:
   - cd ./build
   - git init
@@ -20,7 +20,7 @@ after_script:
   - git config user.email 18236129679@163.com
   - git add .
   - git commit -m "Update build"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/lixingjuan/react-playground" main:gh-pages
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/lixingjuan/react-playground" master:gh-pages
 deploy:
   provider: pages
   cleanup: true
