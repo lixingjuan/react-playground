@@ -1,30 +1,24 @@
-language: node_js
+language: node_js # 构建所需的语言环境
 node_js:
-  - "14.17"
-cache: npm
-
-notifications:
-  email:
-    recipients:
-      - 18236129679@163.com # 设置通知邮件
-    on_success: change
-    on_failure: always
-
-install:
-  - npm install
-
-after_script:
-  - cd _book
-  - git init
-  - git remote add origin https://${REF}
-  - git add .
-  - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
-  - git push --force --quiet "https://${TOKEN}@${REF}" main:gh-pages
-
+  - "v11.14.0"  # 对应的版本
 branches:
   only:
-    - main
-
-env:
-  global:
-    - REF=github.com/lixingjuan/react-playground # 设置 github 地址
+  - master    # 构建的分支
+cache:
+  directories:
+  - node_modules # 依赖缓存的目录
+before_install:
+- export TZ='Asia/Shanghai'  # 设置时区
+install:
+ - npm install -g gitbook-cli # 安装编译工具
+script:
+- gitbook build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN # github 上的token环境变量
+  local-dir: ./_book/ ## 根据情况自定义到静态文件输出目录
+  target-branch: gh-pages
+  verbose: true
+  on:
+    branch: master
