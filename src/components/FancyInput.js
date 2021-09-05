@@ -10,6 +10,7 @@ function FancyInput(props, ref) {
   return <input ref={inputRef} />;
 }
 
-FancyInput = forwardRef(FancyInput);
+
+Object.assign(FancyInput, forwardRef(FancyInput))
 
 export default FancyInput;
