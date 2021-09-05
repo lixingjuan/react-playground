@@ -1,0 +1,16 @@
+image: node
+deploy:
+  cache:
+    paths:
+    - node_modules/
+    - yarn.lock
+    - .cache/
+  script:
+  - yarn --cache-folder ./.cache
+  - node index.js
+  - yarn global add gh-pages --cache-folder ./.cache
+  - git config --global user.email ${GITLAB_USER_EMAIL}
+  - git config --global user.name ${GITLAB_USER_NAME}-${GITLAB_USER_LOGIN}
+  - gh-pages -g `date +%Y.%m.%d.%H.%M.%S` -d ./ -b master -r https://${GIT_USER}:${GIT_PASS}@github.com:lixingjuan/react-playground.git
+  only:
+  - master
