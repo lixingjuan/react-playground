@@ -3,7 +3,7 @@ node_js:
   - "v11.14.0"  # 对应的版本
 branches:
   only:
-  - master    # 构建的分支
+  - mian    # 构建的分支
 cache:
   directories:
   - node_modules # 依赖缓存的目录
@@ -21,4 +21,4 @@ deploy:
   target-branch: gh-pages
   verbose: true
   on:
-    branch: master
+    branch: mian
