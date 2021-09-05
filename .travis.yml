@@ -13,11 +13,19 @@ before_install:
 #   - npm install # 安装编译工具
 script:
   - npm run build
+after_script:
+  - cd ./build
+  - git init
+  - git config user.name lixingjuan
+  - git config user.email 18236129679@163.com
+  - git add .
+  - git commit -m "Update build"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/lixingjuan/react-playground" main:gh-pages
 deploy:
   provider: pages
   cleanup: true
   token: $GITHUB_TOKEN # github 上的token环境变量
-  local_dir: ./build ## 根据情况自定义到静态文件输出目录
+  local_dir: build ## 根据情况自定义到静态文件输出目录
   # project: ./build/
   target_branch: gh-pages
   verbose: true
