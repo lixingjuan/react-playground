@@ -1,16 +1,30 @@
-image: node
-deploy:
-  cache:
-    paths:
-    - node_modules/
-    - yarn.lock
-    - .cache/
-  script:
-  - yarn --cache-folder ./.cache
-  - node index.js
-  - yarn global add gh-pages --cache-folder ./.cache
-  - git config --global user.email ${GITLAB_USER_EMAIL}
-  - git config --global user.name ${GITLAB_USER_NAME}-${GITLAB_USER_LOGIN}
-  - gh-pages -g `date +%Y.%m.%d.%H.%M.%S` -d ./ -b master -r https://${GIT_USER}:${GIT_PASS}@github.com:lixingjuan/react-playground.git
+language: node_js
+node_js:
+  - "14.17"
+cache: npm
+
+notifications:
+  email:
+    recipients:
+      - 18236129679@163.com # 设置通知邮件
+    on_success: change
+    on_failure: always
+
+install:
+  - npm install
+
+after_script:
+  - cd _book
+  - git init
+  - git remote add origin https://${REF}
+  - git add .
+  - git commit -m "Updated By Travis-CI With Build $TRAVIS_BUILD_NUMBER For Github Pages"
+  - git push --force --quiet "https://${TOKEN}@${REF}" main:gh-pages
+
+branches:
   only:
-  - master
+    - main
+
+env:
+  global:
+    - REF=github.com/lixingjuan/react-playground # 设置 github 地址
