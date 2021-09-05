@@ -3,16 +3,14 @@ node_js:
   - "v11.14.0"  # 对应的版本
 branches:
   only:
-  - mian    # 构建的分支
+  - main    # 构建的分支
 cache:
   directories:
   - node_modules # 依赖缓存的目录
 before_install:
 - export TZ='Asia/Shanghai'  # 设置时区
 install:
- - npm install -g gitbook-cli # 安装编译工具
-script:
-- gitbook build
+ - npm install # 安装编译工具
 deploy:
   provider: pages
   skip-cleanup: true
@@ -21,4 +19,4 @@ deploy:
   target-branch: gh-pages
   verbose: true
   on:
-    branch: mian
+    branch: main
