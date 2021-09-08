@@ -1,5 +1,6 @@
 import "./App.css";
 import FancyInput from "./components/FancyInput";
+import TestTabs from "./components/TestTabs";
 import { useRef } from "react";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <button onClick={handleClick}>调用组件的focus方法</button>
       <FancyInput ref={inputRef} />
+      <TestTabs />
     </div>
   );
 }
