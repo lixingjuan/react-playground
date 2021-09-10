@@ -46,13 +46,16 @@ const TestDateRange = () => {
   };
 
   return (
-    <RangePicker
-      value={hackValue || value}
-      onChange={onChange}
-      disabledDate={disabledDate}
-      onCalendarChange={onCalendarChange}
-      onOpenChange={onOpenChange}
-    />
+    <div>
+      <h1>时间范围必须大于一年</h1>
+      <RangePicker
+        value={hackValue || value}
+        onChange={onChange}
+        disabledDate={disabledDate}
+        onCalendarChange={onCalendarChange}
+        onOpenChange={onOpenChange}
+      />
+    </div>
   );
 };
 

@@ -1,5 +1,4 @@
-import "./App.css";
-import FancyInput from "./components/FancyInput";
+import FancyInput from "../components/TestFancyInput";
 import { useRef } from "react";
 
 function TestFancyInput() {
