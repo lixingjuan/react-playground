@@ -1,23 +1,27 @@
 import "./App.css";
-import FancyInput from "./components/FancyInput";
-import TestTabs from "./components/TestTabs";
+import TestFancyInput from "./components/TestFancyInput";
 import TestDateRange from "./components/TestDateRange";
-import { useRef } from "react";
+import Home from "./pages/Home";
+import { Switch, Route } from "react-router";
+import AppMenu from "./components/AppMenu";
+import { Row, Col } from "antd";
 
 function App() {
-  const inputRef = useRef(null);
-
-  const handleClick = () => {
-    inputRef.current.focus();
-  };
-
   return (
-    <div className="App">
-      <button onClick={handleClick}>调用组件的focus方法</button>
-      <FancyInput ref={inputRef} />
-      <TestTabs />
-      <TestDateRange />
-    </div>
+    <Row className="App">
+      <Col span={4}>
+        <AppMenu />
+      </Col>
+
+      <Col span={20}>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route exact path="/TestFancyInput" component={TestFancyInput} />
+          <Route path="/TestDateRange" component={TestDateRange} />
+          <Route path="/TestDateRange" component={TestDateRange} />
+        </Switch>
+      </Col>
+    </Row>
   );
 }
 
