@@ -1,4 +1,4 @@
-import FancyInput from "../components/TestFancyInput";
+import FancyInput from "./components/Input";
 import { useRef } from "react";
 
 function TestFancyInput() {

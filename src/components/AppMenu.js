@@ -10,14 +10,9 @@ function IndexPage(props) {
   return (
     <Menu
       style={{ width: 256, height: "100vh" }}
-      // defaultOpenKeys={["sub1"]}
-      defaultSelectedKeys={["home"]}
+      defaultSelectedKeys={["Home"]}
       mode={"inline"}
     >
-      <Menu.Item key="home">
-        <NavLink to={"/"}>Home</NavLink>
-      </Menu.Item>
-
       {routes.map((it) => (
         <Menu.Item key={it.desc}>
           <NavLink to={it.path} activeClassName="hurray">

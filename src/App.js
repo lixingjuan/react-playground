@@ -15,7 +15,12 @@ function App() {
       <Col span={20}>
         <Switch>
           {routes.map((it) => (
-            <Route path={it.path} component={it.component} key={it.desc} />
+            <Route
+              exact
+              key={it.path}
+              path={it.path}
+              component={it.component}
+            />
           ))}
         </Switch>
       </Col>

@@ -1,8 +1,14 @@
-import Home from "./pages/Home";
-import TestFancyInput from "./pages/TestFancyInput";
-import TestDateRange from "./pages/TestDateRange";
+import Home from "./pages/Home/index";
+import TestFancyInput from "./pages/TestFancyInput/index";
+import TestDateRange from "./pages/TestDateRange/index";
+import TestTabs from "./pages/TestTabs/index";
 
 const routes = [
+  {
+    path: "/",
+    desc: "Home",
+    component: Home,
+  },
   {
     path: "/TestDateRange",
     desc: "测试时间范围组件",
@@ -16,7 +22,7 @@ const routes = [
   {
     path: "/TestTabs",
     desc: "测试antd的tab",
-    component: Home,
+    component: TestTabs,
   },
 ];
 
