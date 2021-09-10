@@ -2,12 +2,18 @@ import Home from "./pages/Home/index";
 import TestFancyInput from "./pages/TestFancyInput/index";
 import TestDateRange from "./pages/TestDateRange/index";
 import TestTabs from "./pages/TestTabs/index";
+import TestZIndex from "./pages/TestZIndex/index";
 
 const routes = [
   {
     path: "/",
     desc: "Home",
     component: Home,
+  },
+  {
+    path: "/TestZIndex",
+    desc: "测试z-index",
+    component: TestZIndex,
   },
   {
     path: "/TestDateRange",
