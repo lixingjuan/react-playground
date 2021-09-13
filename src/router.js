@@ -1,4 +1,5 @@
 import Home from "./pages/Home/index";
+import TestScrollTable from "./pages/TestScrollTable/index";
 import TestReducerAndContext from "./pages/TestReducerAndContext/index";
 import TestCallChildMethod from "./pages/TestCallChildMethod/index";
 import TestDateRange from "./pages/TestDateRange/index";
@@ -10,6 +11,11 @@ const routes = [
     path: "/",
     desc: "Home",
     component: Home,
+  },
+  {
+    path: "/TestScrollTable",
+    desc: "table纵向滚动",
+    component: TestScrollTable,
   },
   {
     path: "/TestReducerAndContext",
