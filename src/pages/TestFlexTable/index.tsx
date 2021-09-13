@@ -6,7 +6,7 @@ const columns = [
     title: "Name",
     dataIndex: "name",
     key: "name",
-    width: 200,
+    width: 500,
     render: (text:string) => <a>{text}</a>,
   },
   {
@@ -43,6 +43,7 @@ const columns = [
     title: "Address",
     dataIndex: "address",
     key: "address",
+    width: 500,
   },
 ];
 

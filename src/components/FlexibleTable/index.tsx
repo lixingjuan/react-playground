@@ -7,7 +7,7 @@ import { ColumnsType, TableProps } from 'antd/lib/table/Table';
 import { Resizable } from 'react-resizable';
 import { MenuOutlined } from '@ant-design/icons';
 
-import './style.less';
+import './style.css';
 import DragListView from './DragColumnView';
 
 
@@ -21,13 +21,12 @@ export interface ResizableTitleProps {
 }
 
 const ResizableTitle = (props: ResizableTitleProps) => {
-  console.log({props});
-  const { width, onResize, className, ...restProps } = props;
+   const { width, onResize, className, ...restProps } = props;
   const isFixed = className.includes('table-cell-fix');
 
-  // if (!width) {
-  //   return <th {...restProps} />;
-  // }
+  if (!width) {
+    return <th {...restProps} />;
+  }
 
   const FixedTh = () => (
     <Row justify="space-between" className="header-buttons">
