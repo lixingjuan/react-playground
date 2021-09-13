@@ -1,4 +1,4 @@
-import FancyInput from "./components/Input";
+import FancyInput from "./Input";
 import { useRef } from "react";
 
 function TestFancyInput() {
@@ -12,6 +12,8 @@ function TestFancyInput() {
     <div>
       <button onClick={handleClick}>调用组件的focus方法</button>
       <FancyInput ref={inputRef} />
+
+      <code>'aaa'</code>
     </div>
   );
 }

@@ -8,7 +8,8 @@ import { SmileTwoTone } from "@ant-design/icons";
 /**
  * @desc 生成一个随机颜色
  */
-const generateRandomColor = () => `#${Math.ceil(Math.random() * 10 ** 6)}`;
+const generateRandomColor = () =>
+  `#${String(Math.ceil(Math.random() * 10 ** 6)).padEnd(6, 0)}`;
 
 function Son() {
   const { state, dispatch } = useContext(IndexContext);

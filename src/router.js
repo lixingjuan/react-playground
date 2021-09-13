@@ -1,6 +1,6 @@
 import Home from "./pages/Home/index";
 import TestReducerAndContext from "./pages/TestReducerAndContext/index";
-import TestFancyInput from "./pages/TestFancyInput/index";
+import TestCallChildMethod from "./pages/TestCallChildMethod/index";
 import TestDateRange from "./pages/TestDateRange/index";
 import TestTabs from "./pages/TestTabs/index";
 import TestZIndex from "./pages/TestZIndex/index";
@@ -27,9 +27,9 @@ const routes = [
     component: TestDateRange,
   },
   {
-    path: "/TestFancyInput",
+    path: "/TestCallChildMethod",
     desc: "测试父组件调用子组件的方法",
-    component: TestFancyInput,
+    component: TestCallChildMethod,
   },
   {
     path: "/TestTabs",
