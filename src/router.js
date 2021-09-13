@@ -1,4 +1,5 @@
 import Home from "./pages/Home/index";
+import TestReducerAndContext from "./pages/TestReducerAndContext/index";
 import TestFancyInput from "./pages/TestFancyInput/index";
 import TestDateRange from "./pages/TestDateRange/index";
 import TestTabs from "./pages/TestTabs/index";
@@ -9,6 +10,11 @@ const routes = [
     path: "/",
     desc: "Home",
     component: Home,
+  },
+  {
+    path: "/TestReducerAndContext",
+    desc: "测试reducer和context",
+    component: TestReducerAndContext,
   },
   {
     path: "/TestZIndex",
