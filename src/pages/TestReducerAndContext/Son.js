@@ -1,5 +1,3 @@
-/** Copyright © 2013-2020 DataYes, All Rights Reserved. */
-
 import React, { useContext } from "react";
 import { Button, Tag, List } from "antd";
 import { IndexContext } from "./hook";

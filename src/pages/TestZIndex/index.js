@@ -1,5 +1,3 @@
-/** Copyright © 2013-2020 DataYes, All Rights Reserved. */
-
 import React, { useState } from "react";
 
 import "./index.css";

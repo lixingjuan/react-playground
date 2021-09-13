@@ -1,5 +1,3 @@
-/** Copyright © 2013-2020 DataYes, All Rights Reserved. */
-
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Menu } from "antd";
