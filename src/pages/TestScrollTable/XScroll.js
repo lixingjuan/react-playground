@@ -6,7 +6,7 @@ const columns = [
     title: "Name",
     dataIndex: "name",
     key: "name",
-    render: (text) => <a>{text}</a>,
+    render: (text) => <span>{text}</span>,
   },
   {
     title: "Age",
@@ -43,8 +43,8 @@ const columns = [
     key: "action",
     render: (text, record) => (
       <Space size="middle">
-        <a>Invite {record.name}</a>
-        <a>Delete</a>
+        <span>Invite {record.name}</span>
+        <span>Delete</span>
       </Space>
     ),
   },
@@ -118,7 +118,7 @@ const data = [
 
 const ScrollTable = () => {
   const tableContentRef = useRef(null);
-  const [height, setheight] = useState(0);
+  const [, setheight] = useState(0);
 
   useEffect(() => {
     // 计算table滚动高度

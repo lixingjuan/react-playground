@@ -1,6 +1,13 @@
 # react-playground
 
+
+## CI地址
+
 https://app.travis-ci.com/github/lixingjuan/react-playground
+
+## 页面地址
+
+https://lixingjuan.github.io/react-playground/
 
 # Getting Started with Create React App
 

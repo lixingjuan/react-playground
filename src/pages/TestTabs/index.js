@@ -1,5 +1,4 @@
-import { Button, Tabs, Menu, Dropdown } from "antd";
-import { useRef, useEffect } from "react";
+import { Tabs } from "antd";
 
 const { TabPane } = Tabs;
 
@@ -12,7 +11,7 @@ const arr = Array.from({ length: 20 }).map((it, index) => ({
 }));
 
 const Demo = () => {
-  const handleMore = () => {};
+  // const handleMore = () => {};
   // const TabsRef = useRef(null);
   // useEffect(() => {
   //   console.log(TabsRef.current);

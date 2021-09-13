@@ -1,10 +1,6 @@
-import React, { useState } from "react";
-
 import "./index.css";
 
 function IndexPage() {
-  const [value, setValue] = useState();
-
   return (
     <div>
       <ul className="list">
