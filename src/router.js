@@ -1,4 +1,5 @@
 import Home from "./pages/Home/index";
+import TestSWR from "./pages/TestSWR";
 import TestFlexTable from "./pages/TestFlexTable";
 import TestScrollTable from "./pages/TestScrollTable/index";
 import TestReducerAndContext from "./pages/TestReducerAndContext/index";
@@ -12,6 +13,11 @@ const routes = [
     path: "/",
     desc: "Home",
     component: Home,
+  },
+  {
+    path: "/TestSWR",
+    desc: "测试swr",
+    component: TestSWR,
   },
   {
     path: "/TestFlexTable",
