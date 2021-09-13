@@ -1,0 +1,51 @@
+import { useState } from "react";
+import { useDebounceEffect } from "ahooks";
+
+// import React, { useState } from "react";
+// import useDebounceEffect from "../";
+
+// export default function TestAHooksToggle() {
+//   const [state, { toggle }] = useToggle();
+
+//   return (
+//     <div>
+//       <p>Current Boolean: {String(state)}</p>
+//       <p>
+//         <button onClick={() => toggle()}>Toggle</button>
+//       </p>
+//     </div>
+//   );
+// }
+
+export default function TestAHooksToggle() {
+  const [value, setValue] = useState("hello");
+  const [records, setRecords] = useState<string[]>([]);
+
+  useDebounceEffect(
+    () => {
+      setRecords((val) => [...val, value]);
+    },
+    [value],
+    {
+      wait: 1000,
+    }
+  );
+
+  return (
+    <div>
+      <input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Typed value"
+        style={{ width: 280 }}
+      />
+      <p style={{ marginTop: 16 }}>
+        <ul>
+          {records.map((record, index) => (
+            <li key={index}>{record}</li>
+          ))}
+        </ul>
+      </p>
+    </div>
+  );
+}

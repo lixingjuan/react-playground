@@ -1,4 +1,5 @@
 import Home from "./pages/Home/index";
+import TestAHooks from "./pages/TestAHooks";
 import TestSWR from "./pages/TestSWR";
 import TestFlexTable from "./pages/TestFlexTable";
 import TestScrollTable from "./pages/TestScrollTable/index";
@@ -13,6 +14,11 @@ const routes = [
     path: "/",
     desc: "Home",
     component: Home,
+  },
+  {
+    path: "/TestAHooks",
+    desc: "测试TestAHooks",
+    component: TestAHooks,
   },
   {
     path: "/TestSWR",
