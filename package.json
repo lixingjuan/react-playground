@@ -47,5 +47,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/react-playground/"
+  "homepage": "/react-playground/",
+  "devDependencies": {
+    "@types/react-router": "^5.1.16"
+  }
 }

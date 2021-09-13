@@ -1,9 +1,9 @@
 import "./App.css";
 import { Row, Col } from "antd";
 import { Switch, Route } from "react-router";
-import routes from "./router";
 
 import AppMenu from "./components/Menu";
+import routes from "./router";
 
 function App() {
   return (
