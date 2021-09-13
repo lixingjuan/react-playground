@@ -1,6 +1,11 @@
 import { List, Card } from "antd";
 import useToggle from "./components/useToggle";
 // import DemoTwo from "./components/useToggle";
+import {
+  SmileTwoTone,
+  HeartTwoTone,
+  CheckCircleTwoTone,
+} from "@ant-design/icons";
 
 const data = [
   {
@@ -25,10 +30,21 @@ export default function Demo() {
         xl: 6,
         xxl: 3,
       }}
+      style={{ marginTop: "50px" }}
       dataSource={data}
       renderItem={({ title, CompElement }) => (
         <List.Item>
-          <Card title={title}>
+          <Card
+            style={{
+              borderColor: "#7fcbfa",
+            }}
+            title={
+              <>
+                <HeartTwoTone twoToneColor="#eb2f96" />
+                <span>{title}</span>
+              </>
+            }
+          >
             <CompElement />
           </Card>
         </List.Item>
