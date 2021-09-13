@@ -1,8 +1,9 @@
 import React from "react";
-import { useToggle } from "ahooks";
+// import { useToggle } from "ahooks";
+import useToggle from "./code";
 
 export default function TestAHooksToggle() {
-  const [state, { toggle }] = useToggle();
+  const [state, { toggle }] = useToggle("left");
 
   return (
     <div>

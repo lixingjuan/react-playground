@@ -9,6 +9,8 @@ import TestDateRange from "./pages/TestDateRange/index";
 import TestTabs from "./pages/TestTabs/index";
 import TestZIndex from "./pages/TestZIndex/index";
 
+const baseUrl = "react-playground";
+
 const routes = [
   {
     path: "/",
@@ -62,4 +64,7 @@ const routes = [
   },
 ];
 
-export default routes;
+export default routes.map((it) => ({
+  ...it,
+  path: `/${baseUrl}${it.path}`,
+}));
