@@ -1,4 +1,5 @@
 import Home from "./pages/Home/index";
+import TestFlexTable from "./pages/TestFlexTable";
 import TestScrollTable from "./pages/TestScrollTable/index";
 import TestReducerAndContext from "./pages/TestReducerAndContext/index";
 import TestCallChildMethod from "./pages/TestCallChildMethod/index";
@@ -11,6 +12,11 @@ const routes = [
     path: "/",
     desc: "Home",
     component: Home,
+  },
+  {
+    path: "/TestFlexTable",
+    desc: "table可伸缩",
+    component: TestFlexTable,
   },
   {
     path: "/TestScrollTable",
