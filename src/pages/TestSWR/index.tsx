@@ -1,15 +1,17 @@
 import { List, Card } from "antd";
-import DemoOne from "./DemoOne";
-import DemoTwo from "./DemoTwo";
+
+import DemoRequestSuccess from "./DemoRequestSuccess";
+import DemoRequestError from "./DemoRequestError";
+import { PandaIcon, HeartIcon } from "./Icons";
 
 const data = [
   {
     title: "以下组件会在5秒后显示， hello world!",
-    CompElement: DemoOne,
+    CompElement: DemoRequestSuccess,
   },
   {
     title: "以下组件会在5秒后显示， Request Error!",
-    CompElement: DemoTwo,
+    CompElement: DemoRequestError,
   },
 ];
 
@@ -27,8 +29,16 @@ export default function Demo() {
       }}
       dataSource={data}
       renderItem={({ title, CompElement }) => (
-        <List.Item>
-          <Card title={title}>
+        <List.Item key={title}>
+          <Card
+            title={
+              <span>
+                <HeartIcon />
+                {title}
+              </span>
+            }
+          >
+            <PandaIcon />
             <CompElement />
           </Card>
         </List.Item>

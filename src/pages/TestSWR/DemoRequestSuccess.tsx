@@ -1,10 +1,10 @@
 import useSWR from "swr";
+
 /* @ts-ignore-next-line */
 const fetcher = (...args: any): any => {
-  console.log({ args });
   return new Promise((resove, reject) => {
     setTimeout(() => {
-      reject({
+      resove({
         name: "hello world!",
       });
     }, 5000);
@@ -13,8 +13,6 @@ const fetcher = (...args: any): any => {
 
 function Profile() {
   const { data, error } = useSWR("/api/user/123", fetcher);
-  console.log({ data });
-  console.log({ error });
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;

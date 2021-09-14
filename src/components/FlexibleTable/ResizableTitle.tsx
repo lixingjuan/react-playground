@@ -50,6 +50,7 @@ const ResizableTitle = (props: ResizableTitleProps) => {
           }}
         />
       }
+      /* @ts-ignore */
       onResize={onResize}
       draggableOpts={{ enableUserSelectHack: false }}
     >

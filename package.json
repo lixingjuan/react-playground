@@ -49,6 +49,7 @@
   },
   "homepage": "/react-playground/",
   "devDependencies": {
+    "@types/react-resizable": "^1.7.3",
     "@types/react-router": "^5.1.16"
   }
 }

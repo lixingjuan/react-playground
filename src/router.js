@@ -1,6 +1,7 @@
 import Home from "./pages/Home/index";
 import TestAHooks from "./pages/TestAHooks";
 import TestSWR from "./pages/TestSWR";
+import TestResizable from "./pages/TestResizable/index";
 import TestFlexTable from "./pages/TestFlexTable";
 import TestScrollTable from "./pages/TestScrollTable/index";
 import TestReducerAndContext from "./pages/TestReducerAndContext/index";
@@ -21,6 +22,11 @@ const routes = [
     path: "/TestAHooks",
     desc: "测试TestAHooks",
     component: TestAHooks,
+  },
+  {
+    path: "/TestResizable",
+    desc: "测试库react-resizable",
+    component: TestResizable,
   },
   {
     path: "/TestSWR",
