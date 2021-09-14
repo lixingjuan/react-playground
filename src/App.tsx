@@ -9,12 +9,12 @@ import routes from "./router";
 function App() {
   return (
     <Row className="App">
-      <Col span={4}>
+      <Col span={2}>
         {/* <AppMenu routes={routes} /> */}
         <NewMenu />
       </Col>
 
-      <Col span={20}>
+      <Col span={20} push={2}>
         <Switch>
           {routes.map((it) => (
             <Route
