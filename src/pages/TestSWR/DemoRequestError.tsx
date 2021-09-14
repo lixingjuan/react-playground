@@ -9,7 +9,7 @@ const fetcher = (...args: any): any => {
 };
 
 export default function Profile() {
-  const { data, error } = useSWR("/api/user/123", fetcher);
+  const { data, error } = useSWR("/api/user/1", fetcher);
   console.log({ data });
   console.log({ error });
 
@@ -17,5 +17,5 @@ export default function Profile() {
   if (!data) return <div>loading...</div>;
 
   // 渲染数据
-  return <div>hello {data.name}!</div>;
+  return <div>DemoRequestError, hello {data.name}!</div>;
 }
