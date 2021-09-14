@@ -8,12 +8,12 @@ import routes from "./router";
 
 function App() {
   return (
-    <Row className="App">
-      <NewMenu />
-      {/* <Col span={2}>
-        <AppMenu routes={routes} />
-      </Col> */}
-      <Row className="container">
+    <div className="App">
+      <div className="header-container">
+        <NewMenu />
+      </div>
+
+      <div className="page-container">
         <Switch>
           {routes.map((it) => (
             <Route
@@ -24,8 +24,8 @@ function App() {
             />
           ))}
         </Switch>
-      </Row>
-    </Row>
+      </div>
+    </div>
   );
 }
 
