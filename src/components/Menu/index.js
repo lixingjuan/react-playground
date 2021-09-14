@@ -9,7 +9,7 @@ function IndexPage(props) {
   } = useHistory();
 
   const defaultSelectedKeys =
-    routes.find((it) => it.path === pathname).desc || "Home";
+    routes.find((it) => it.path === pathname)?.desc || "Home";
 
   return (
     <Menu

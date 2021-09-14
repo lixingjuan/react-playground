@@ -1,16 +1,18 @@
-/* eslint-disable */
-import React, { Component } from 'react';
-import { closest, getDomIndex, getScrollElement } from './util';
+import { Component } from "react";
+import { closest, getDomIndex, getScrollElement } from "./util";
 
-const DEFAULT_NODE_SELECTOR = 'tr';
+// const DEFAULT_NODE_SELECTOR = "tr";
+
 const DIRECTIONS = {
   TOP: 1,
   BOTTOM: 3,
 };
-const UNIT_PX = 'px';
+
+const UNIT_PX = "px";
+
 const DRAG_LIND_STYLE =
-  'position:fixed;z-index:9999;height:0;' +
-  'margin-top:-1px;border-bottom:dashed 2px red;display:none;';
+  "position:fixed;z-index:9999;height:0;" +
+  "margin-top:-1px;border-bottom:dashed 2px red;display:none;";
 
 class ReactDragListView extends Component {
   constructor(props) {
@@ -40,7 +42,8 @@ class ReactDragListView extends Component {
   }
 
   isFixColumn(target) {
-    const isFixColumn = this.cacheDragTarget.style.getPropertyValue('position') === 'sticky'
+    const isFixColumn =
+      this.cacheDragTarget.style.getPropertyValue("position") === "sticky";
     return isFixColumn;
   }
 
@@ -53,8 +56,8 @@ class ReactDragListView extends Component {
           ? handle
           : this.getDragNode(handle);
       if (target) {
-        handle.setAttribute('draggable', false);
-        target.setAttribute('draggable', true);
+        handle.setAttribute("draggable", false);
+        target.setAttribute("draggable", true);
         target.ondragstart = this.onDragStart;
         target.ondragend = this.onDragEnd;
       }
@@ -66,10 +69,10 @@ class ReactDragListView extends Component {
     const eventData = e;
     if (target) {
       const { parentNode } = target;
-      eventData.dataTransfer.setData('Text', '');
-      eventData.dataTransfer.effectAllowed = 'move';
+      eventData.dataTransfer.setData("Text", "");
+      eventData.dataTransfer.effectAllowed = "move";
       parentNode.ondragenter = this.onDragEnter;
-      parentNode.ondragover = function(ev) {
+      parentNode.ondragover = function (ev) {
         ev.preventDefault();
         return true;
       };
@@ -94,7 +97,7 @@ class ReactDragListView extends Component {
     }
     this.cacheDragTarget = target;
     this.setState({ toIndex });
-    if(!this.isFixColumn()){
+    if (!this.isFixColumn()) {
       this.fixDragLine(target);
     }
   }
@@ -103,7 +106,7 @@ class ReactDragListView extends Component {
     const target = this.getDragNode(e.target);
     this.stopAutoScroll();
     if (target) {
-      target.removeAttribute('draggable');
+      target.removeAttribute("draggable");
       target.ondragstart = null;
       target.ondragend = null;
       target.parentNode.ondragenter = null;
@@ -125,8 +128,6 @@ class ReactDragListView extends Component {
     return closest(target, this.props.nodeSelector, this.dragList);
   }
 
-
-
   getHandleNode(target) {
     return closest(
       target,
@@ -137,11 +138,11 @@ class ReactDragListView extends Component {
 
   getDragLine() {
     if (!this.dragLine) {
-      this.dragLine = window.document.createElement('div');
-      this.dragLine.setAttribute('style', DRAG_LIND_STYLE);
+      this.dragLine = window.document.createElement("div");
+      this.dragLine.setAttribute("style", DRAG_LIND_STYLE);
       window.document.body.appendChild(this.dragLine);
     }
-    this.dragLine.className = this.props.lineClassName || '';
+    this.dragLine.className = this.props.lineClassName || "";
     return this.dragLine;
   }
 
@@ -193,7 +194,7 @@ class ReactDragListView extends Component {
 
   hideDragLine() {
     if (this.dragLine) {
-      this.dragLine.style.display = 'none';
+      this.dragLine.style.display = "none";
     }
   }
 
@@ -211,10 +212,8 @@ class ReactDragListView extends Component {
     const lineTop =
       this.state.toIndex < this.state.fromIndex ? top : top + height;
     if (this.props.enableScroll && this.scrollElement) {
-      const {
-        height: scrollHeight,
-        top: scrollTop,
-      } = this.scrollElement.getBoundingClientRect();
+      const { height: scrollHeight, top: scrollTop } =
+        this.scrollElement.getBoundingClientRect();
       if (lineTop < scrollTop - 2 || lineTop > scrollTop + scrollHeight + 2) {
         this.hideDragLine();
         return;
@@ -223,7 +222,7 @@ class ReactDragListView extends Component {
     dragLine.style.left = left + UNIT_PX;
     dragLine.style.width = width + UNIT_PX;
     dragLine.style.top = lineTop + UNIT_PX;
-    dragLine.style.display = 'block';
+    dragLine.style.display = "block";
   }
 
   render() {

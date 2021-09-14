@@ -1,11 +1,7 @@
 import { List, Card } from "antd";
 import useToggle from "./components/useToggle";
 // import DemoTwo from "./components/useToggle";
-import {
-  SmileTwoTone,
-  HeartTwoTone,
-  CheckCircleTwoTone,
-} from "@ant-design/icons";
+import { HeartTwoTone } from "@ant-design/icons";
 
 const data = [
   {

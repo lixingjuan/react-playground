@@ -1,9 +1,9 @@
-import DragListView from './DragListView';
+import DragListView from "./DragListView";
 
-const UNIT_PX = 'px';
+const UNIT_PX = "px";
 const DRAG_LIND_STYLE =
-  'width:0;margin-left:-1px;margin-top:0;' +
-  'border-bottom:0 none;border-left:dashed 2px red;';
+  "width:0;margin-left:-1px;margin-top:0;" +
+  "border-bottom:0 none;border-left:dashed 2px red;";
 const DIRECTIONS = {
   RIGHT: 2,
   LEFT: 4,
@@ -14,8 +14,8 @@ class DragColumnView extends DragListView {
     if (!this.dragLine) {
       super.getDragLine();
       this.dragLine.setAttribute(
-        'style',
-        this.dragLine.getAttribute('style') + DRAG_LIND_STYLE
+        "style",
+        this.dragLine.getAttribute("style") + DRAG_LIND_STYLE
       );
     }
     return this.dragLine;
@@ -75,10 +75,8 @@ class DragColumnView extends DragListView {
     const lineLeft =
       this.state.toIndex < this.state.fromIndex ? left : left + width;
     if (this.props.enableScroll && this.scrollElement) {
-      const {
-        width: scrollWidth,
-        left: scrollLeft,
-      } = this.scrollElement.getBoundingClientRect();
+      const { width: scrollWidth, left: scrollLeft } =
+        this.scrollElement.getBoundingClientRect();
       if (
         lineLeft < scrollLeft - 2 ||
         lineLeft > scrollLeft + scrollWidth + 2
@@ -90,7 +88,7 @@ class DragColumnView extends DragListView {
     dragLine.style.top = top + UNIT_PX;
     dragLine.style.height = height + UNIT_PX;
     dragLine.style.left = lineLeft + UNIT_PX;
-    dragLine.style.display = 'block';
+    dragLine.style.display = "block";
   }
 }
 

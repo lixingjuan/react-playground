@@ -1,16 +1,12 @@
 /** Copyright © 2013-2020 DataYes, All Rights Reserved. */
 
-import React, { useState, useCallback, useMemo } from 'react';
-import { Table, Row, Col } from 'antd';
-import { ColumnsType, TableProps } from 'antd/lib/table/Table';
-/* @ts-ignore-next-line */
-import { Resizable } from 'react-resizable';
-import { MenuOutlined } from '@ant-design/icons';
+import React, { useState, useCallback, useMemo } from "react";
+import { ColumnsType, TableProps } from "antd/lib/table/Table";
+import { Table } from "antd";
 
-import './style.css';
-import DragListView from './DragColumnView';
-
-
+import "./style.css";
+import DragListView from "./DragColumnView";
+import ResizableTitle from "./ResizableTitle";
 
 export interface ResizableTitleProps {
   width: number;
@@ -19,49 +15,6 @@ export interface ResizableTitleProps {
   columns: ColumnsType;
   children: React.ReactElement;
 }
-
-const ResizableTitle = (props: ResizableTitleProps) => {
-   const { width, onResize, className, ...restProps } = props;
-  const isFixed = className.includes('table-cell-fix');
-
-  if (!width) {
-    return <th {...restProps} />;
-  }
-
-  const FixedTh = () => (
-    <Row justify="space-between" className="header-buttons">
-      <Col className="header-button">{restProps.children}</Col>
-    </Row>
-  );
-
-  const DefaultTh = () => (
-    <Row justify="space-between" className="header-buttons">
-      <Col className="header-button">{restProps.children}</Col>
-      <Col className="drag-button">
-        <MenuOutlined />
-      </Col>
-    </Row>
-  );
-
-  return (
-    <Resizable
-      width={width}
-      height={0}
-      handle={
-        <span
-          className="react-resizable-handle"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        />
-      }
-      onResize={onResize}
-      draggableOpts={{ enableUserSelectHack: false }}
-    >
-      <th {...restProps}>{isFixed ? <FixedTh /> : <DefaultTh />}</th>
-    </Resizable>
-  );
-};
 
 const FlexibleTable: React.FC<TableProps<any>> = (props: TableProps<any>) => {
   const { columns: initColumns = [] } = props;
@@ -83,19 +36,20 @@ const FlexibleTable: React.FC<TableProps<any>> = (props: TableProps<any>) => {
 
       setColumns(tempArr);
     },
-    nodeSelector: 'th',
-    handleSelector: '.drag-button',
+    nodeSelector: "th",
+    handleSelector: ".drag-button",
   };
 
   const handleResize = useCallback(
-    (index) => (e: MouseEvent, { size }: any) => {
-      const tempColumns = [...columns];
-      tempColumns[index] = {
-        ...tempColumns[index],
-        width: size.width,
-      };
-      setColumns(tempColumns);
-    },
+    (index) =>
+      (e: MouseEvent, { size }: any) => {
+        const tempColumns = [...columns];
+        tempColumns[index] = {
+          ...tempColumns[index],
+          width: size.width,
+        };
+        setColumns(tempColumns);
+      },
     [columns]
   );
 
