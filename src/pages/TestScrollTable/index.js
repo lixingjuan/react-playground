@@ -1,11 +1,11 @@
 import YScroll from "./YScroll";
-import XScroll from "./XScroll";
+// import XScroll from "./XScroll";
 
 const ScrollTable = () => {
   return (
     <>
       <YScroll />
-      <XScroll />
+      {/* <XScroll /> */}
     </>
   );
 };
