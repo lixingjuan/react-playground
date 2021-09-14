@@ -3,13 +3,15 @@ import { Row, Col } from "antd";
 import { Switch, Route } from "react-router";
 
 import AppMenu from "./components/Menu";
+import NewMenu from "./components/NewMenu";
 import routes from "./router";
 
 function App() {
   return (
     <Row className="App">
       <Col span={4}>
-        <AppMenu routes={routes} />
+        {/* <AppMenu routes={routes} /> */}
+        <NewMenu />
       </Col>
 
       <Col span={20}>
