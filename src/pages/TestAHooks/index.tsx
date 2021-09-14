@@ -1,5 +1,6 @@
 import { List, Card } from "antd";
 import useToggle from "./components/useToggle";
+import useCountDown from "./components/useCountDown";
 // import DemoTwo from "./components/useToggle";
 import { HeartTwoTone } from "@ant-design/icons";
 
@@ -8,10 +9,10 @@ const data = [
     title: "useToggle",
     CompElement: useToggle,
   },
-  // {
-  //   title: "useDebounceEffect",
-  //   CompElement: DemoTwo,
-  // },
+  {
+    title: "useCountDown",
+    CompElement: useCountDown,
+  },
 ];
 
 export default function Demo() {
