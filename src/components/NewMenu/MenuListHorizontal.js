@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import { bgColorsBody, MenuListArr } from "./constants";
-import "./MenuList.css";
+import "./MenuListHorizontal.css";
 
 export default function MenuList() {
   const [activeIndex, setactiveIndex] = useState(0);
@@ -22,12 +22,13 @@ export default function MenuList() {
 
     const left =
       Math.floor(
-        offsetActiveItem.top -
-          MenuRef.current.offsetTop -
-          (menuBorder.offsetTop - offsetActiveItem.height) / 2
+        offsetActiveItem.left -
+          MenuRef.current.offsetLeft -
+          (menuBorder.offsetLeft - offsetActiveItem.height) / 2
       ) + "px";
 
-    menuBorder.style.transform = `translate3d(0, ${left} , 0) rotate(90deg) translateY(50%)`;
+    menuBorder.style.transform = `translate3d(${left}, 100px , 0) rotate(180deg)`;
+    // menuBorder.style.transform = `translate3d(${left}, 0 , 0) rotate(90deg) translateY(50%)`;
   }, []);
 
   /**

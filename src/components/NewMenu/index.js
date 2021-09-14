@@ -1,11 +1,12 @@
-import "./index.css";
-import MenuList from "./MenuList";
+// import MenuList from "./MenuList";
+import MenuListHorizontal from "./MenuListHorizontal";
 
 export default function AAAA() {
   return (
     <>
       <div>
-        <MenuList />
+        {/* <MenuList /> */}
+        <MenuListHorizontal />
       </div>
 
       <div className="svg-container">
