@@ -1,5 +1,6 @@
 import { List, Card } from "antd";
 import useRequest from "./components/useRequest";
+import useDrag from "./components/useDrag";
 import useToggle from "./components/useToggle";
 import useSelections from "./components/useSelections";
 import useCount from "./components/useCount";
@@ -11,6 +12,8 @@ const data = [
   {
     title: "useRequest",
     CompElement: useRequest,
+    title: "useDrag",
+    CompElement: useDrag,
   },
   {
     title: "useToggle",
