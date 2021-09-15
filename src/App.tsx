@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import { Switch, Route } from "react-router";
 
 import AppMenu from "./components/Menu";
-import NewMenu from "./components/NewMenu";
+// import NewMenu from "./components/NewMenu";
 import routes from "./router";
 
 function App() {
