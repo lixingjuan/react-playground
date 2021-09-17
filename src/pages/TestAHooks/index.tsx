@@ -1,4 +1,5 @@
 import { List, Card } from "antd";
+import useRequest from "./components/useRequest";
 import useToggle from "./components/useToggle";
 import useSelections from "./components/useSelections";
 import useCount from "./components/useCount";
@@ -7,6 +8,10 @@ import useCountDown from "./components/useCountDown";
 import { HeartTwoTone } from "@ant-design/icons";
 
 const data = [
+  {
+    title: "useRequest",
+    CompElement: useRequest,
+  },
   {
     title: "useToggle",
     CompElement: useToggle,
