@@ -1,4 +1,5 @@
-import { Tabs } from "antd";
+import { Tabs, Card } from "antd";
+import TestRender from "./components/TestRender";
 
 const { TabPane } = Tabs;
 
@@ -10,16 +11,9 @@ const arr = Array.from({ length: 20 }).map((it, index) => ({
   tab: `tab${index}`,
 }));
 
-const Demo = () => {
-  // const handleMore = () => {};
-  // const TabsRef = useRef(null);
-  // useEffect(() => {
-  //   console.log(TabsRef.current);
-  // }, [TabsRef]);
-
+const TestTabsPage = () => {
   return (
     <div>
-      {/* onChange 居然是 */}
       <Tabs defaultActiveKey="1" onChange={callback}>
         {arr.map((it) => (
           <TabPane tab={it.tab} key={it.tab}>
@@ -27,8 +21,12 @@ const Demo = () => {
           </TabPane>
         ))}
       </Tabs>
+
+      <Card title="测试tab的渲染" style={{ width: "100vw" }}>
+        <TestRender />
+      </Card>
     </div>
   );
 };
 
-export default Demo;
+export default TestTabsPage;
