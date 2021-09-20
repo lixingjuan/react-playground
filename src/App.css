@@ -15,3 +15,17 @@
   height: calc(100vh - 100px);
   margin: 0 auto;
 }
+
+.card-wrapper {
+  column-count: 3;
+  column-gap: 50px;
+  width: 80vw;
+  padding-top: 20px;
+}
+
+.card-wrapper .ant-card {
+  margin: 50px 0px;
+  box-shadow: 10px 10px 20px darkgray;
+  overflow: auto;
+  height: 100%;
+}
