@@ -9,6 +9,7 @@ function usePersistFn<T extends noop>(fn: T) {
   const persistFn = useRef<T>();
   if (!persistFn.current) {
     persistFn.current = function (...args) {
+      /* @ts-ignore-next-line */
       return fnRef.current!.apply(this, args);
     } as T;
   }
