@@ -29,3 +29,6 @@
   overflow: auto;
   height: 100%;
 }
+.card-wrapper .ant-card .ant-card-body {
+  padding: 50px 24px;
+}

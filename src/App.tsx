@@ -1,4 +1,5 @@
 import "./App.css";
+// import "./antd.css";
 import { Row, Col } from "antd";
 import { Switch, Route } from "react-router";
 

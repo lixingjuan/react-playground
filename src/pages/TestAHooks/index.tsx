@@ -1,4 +1,5 @@
 import { List, Card } from "antd";
+import usePersistFn from "./components/usePersistFn";
 import useCreation from "./components/useCreation";
 import useDebounce from "./components/useDebounce";
 import useRequest from "./components/useRequest";
@@ -11,6 +12,10 @@ import useCountDown from "./components/useCountDown";
 import { HeartTwoTone } from "@ant-design/icons";
 
 const data = [
+  {
+    title: "usePersistFn",
+    CompElement: usePersistFn,
+  },
   {
     title: "useCreation",
     CompElement: useCreation,
@@ -50,6 +55,7 @@ export default function Demo() {
     <div>
       <h2>ahooks源码学习</h2>
       <h3>源码真的过于精致了！</h3>
+      <hr />
       <div className="card-wrapper">
         {data.map(({ title, CompElement }) => (
           <Card
