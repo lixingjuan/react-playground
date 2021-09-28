@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { DatePicker } from "antd";
 
 const { RangePicker } = DatePicker;
 
 const TestDateRange = () => {
+  /* 中间中转时间 */
+  const [tempDate, setTempDate] = useState();
+  /* 每次的选择 */
   const [dates, setDates] = useState([]);
-  const [value, setValue] = useState();
-  const [hackValue, setHackValue] = useState();
+  /* 最终真实值 */
+  const [realDate, setRealDate] = useState();
 
   /**
    * @desc disabled 的时间范围
@@ -25,10 +28,10 @@ const TestDateRange = () => {
    */
   const onOpenChange = (open) => {
     if (open) {
-      setHackValue([]);
       setDates([]);
+      setRealDate([]);
     } else {
-      setHackValue(undefined);
+      setRealDate(undefined);
     }
   };
 
@@ -42,14 +45,14 @@ const TestDateRange = () => {
 
   const onChange = (val) => {
     console.log("触发", "onChange");
-    setValue(val);
+    setTempDate(val);
   };
 
   return (
     <div>
       <h1>时间范围必须大于一年</h1>
       <RangePicker
-        value={hackValue || value}
+        value={realDate || tempDate}
         onChange={onChange}
         disabledDate={disabledDate}
         onCalendarChange={onCalendarChange}

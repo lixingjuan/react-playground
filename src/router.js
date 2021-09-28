@@ -1,5 +1,7 @@
 import Home from "./pages/Home/index";
 import TestAHooks from "./pages/TestAHooks";
+import TestKey from "./pages/TestKey";
+import TestAntd from "./pages/TestAntd";
 import TestSWR from "./pages/TestSWR";
 import TestResizable from "./pages/TestResizable/index";
 import TestFlexTable from "./pages/TestFlexTable";
@@ -22,6 +24,16 @@ const routes = [
     path: "/TestAHooks",
     desc: "测试TestAHooks",
     component: TestAHooks,
+  },
+  {
+    path: "/TestAntd",
+    desc: "测试TestAntd",
+    component: TestAntd,
+  },
+  {
+    path: "/TestKey",
+    desc: "测试TestKey",
+    component: TestKey,
   },
   {
     path: "/TestResizable",
