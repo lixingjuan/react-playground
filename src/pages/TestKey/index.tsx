@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Tag, Card, Row } from "antd";
+/* @ts-ignore */
 import { nanoid } from "nanoid";
 
 const arr = () => [

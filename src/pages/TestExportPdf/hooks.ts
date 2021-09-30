@@ -4,6 +4,10 @@ import { useCallback } from "react";
 import domtoimage from "dom-to-image";
 import { jsPDF as JsPDF } from "jspdf";
 import { message } from "antd";
+/* @ts-ignore */
+import HTMLtoDOCX from "html-to-docx/dist/html-to-docx.esm.js";
+/* @ts-ignore */
+import { saveAs } from "file-saver";
 
 export const useExport = () => {
   /**
@@ -33,7 +37,11 @@ export const useExport = () => {
       });
   };
 
-  const handleExport = useCallback(async (domSelector = "body") => {
+  /**
+   * @desc 导出pdf
+   * @param {*} useCallback
+   */
+  const handleExportPdf = useCallback(async (domSelector = "body") => {
     const dataURL = await handleGenerateDataUrl(domSelector);
 
     const pdfObj = new JsPDF();
@@ -47,9 +55,22 @@ export const useExport = () => {
     pdfObj.save("lixingjuan.pdf");
   }, []);
 
+  /**
+   * @desc 导出word
+   * @param {string} domSelector dom选择器
+   */
+  const handleExportWord = useCallback((domSelector = "body") => {
+    setTimeout(async () => {
+      const domHtml = document.querySelector("body")?.innerHTML;
+      const res = await HTMLtoDOCX(domHtml);
+      saveAs(res, "lixingjuan.doc");
+    }, 0);
+  }, []);
+
   return {
-    handleGenerateDataUrl,
-    handleExport,
     handleAppend,
+    handleExportPdf,
+    handleExportWord,
+    handleGenerateDataUrl,
   };
 };

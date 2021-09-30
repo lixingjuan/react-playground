@@ -13,16 +13,20 @@ const ToPdfDomContainer = styled.div`
 `;
 
 export default function DemoExportButton() {
-  const { handleAppend, handleExport } = useExport();
+  const { handleAppend, handleExportPdf, handleExportWord } = useExport();
 
   return (
     <div>
       <Button onClick={() => handleAppend("#highChart-dom")}>
         将Top10的图片append到body
       </Button>
-      <Button onClick={() => handleExport("#highChart-dom")}>
+      <Button onClick={() => handleExportPdf("#highChart-dom")}>
         导出chart部分的的pdf
       </Button>
+      <Button onClick={() => handleExportWord("#highChart-dom")}>
+        导出chart部分的的word
+      </Button>
+
       <ToPdfDomContainer>
         {/* Demo TOP10 */}
         <div id="highChart-dom" style={{ width: "800px" }}>
