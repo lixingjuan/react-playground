@@ -1,6 +1,7 @@
 import Home from "./pages/Home/index";
 import TestAHooks from "./pages/TestAHooks";
 import TestKey from "./pages/TestKey";
+import TestExportPdf from "./pages/TestExportPdf";
 import TestAntd from "./pages/TestAntd";
 import TestSWR from "./pages/TestSWR";
 import TestResizable from "./pages/TestResizable/index";
@@ -24,6 +25,11 @@ const routes = [
     path: "/TestAHooks",
     desc: "测试TestAHooks",
     component: TestAHooks,
+  },
+  {
+    path: "/TestExportPdf",
+    desc: "测试TestExportPdf",
+    component: TestExportPdf,
   },
   {
     path: "/TestAntd",
