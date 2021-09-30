@@ -58,13 +58,25 @@ export const useExport = () => {
   /**
    * @desc 导出word
    * @param {string} domSelector dom选择器
+   * 由于html-to-docx不能导出图片, 所以需要将图片进行解析为base64
    */
-  const handleExportWord = useCallback((domSelector = "body") => {
-    setTimeout(async () => {
-      const domHtml = document.querySelector("body")?.innerHTML;
-      const res = await HTMLtoDOCX(domHtml);
-      saveAs(res, "lixingjuan.doc");
-    }, 0);
+  const handleExportWord = useCallback(async (domSelector = "body") => {
+    // 1. 创建canvas画布
+    const canvasContext = document.createElement("canvas");
+    const ctx = canvasContext.getContext("2d");
+
+    if (ctx?.fillStyle) {
+      ctx.fillStyle = "green";
+      ctx.fillRect(10, 10, 150, 100);
+    }
+
+    const base64 = ctx?.canvas.toDataURL();
+
+    // const domHtml = document.querySelector("body")?.innerHTML;
+    const domHtml = `<img src="${base64}" />`;
+
+    const res = await HTMLtoDOCX(domHtml);
+    saveAs(res, "lixingjuan.doc");
   }, []);
 
   return {

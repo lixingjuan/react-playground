@@ -31,6 +31,10 @@ export default function DemoExportButton() {
         {/* Demo TOP10 */}
         <div id="highChart-dom" style={{ width: "800px" }}>
           <HighChart />
+          <img
+            src="https://upload-images.jianshu.io/upload_images/14626058-8c76170d2da0c905.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp"
+            alt="我是img标签的alt"
+          />
         </div>
       </ToPdfDomContainer>
     </div>
