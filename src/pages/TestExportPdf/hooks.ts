@@ -5,11 +5,34 @@ import domtoimage from "dom-to-image";
 import { jsPDF as JsPDF } from "jspdf";
 import { message } from "antd";
 /* @ts-ignore */
+import tempCanvg from "canvg";
+/* @ts-ignore */
 import HTMLtoDOCX from "html-to-docx/dist/html-to-docx.esm.js";
 /* @ts-ignore */
 import { saveAs } from "file-saver";
 
+const canvg = tempCanvg;
+
 export const useExport = () => {
+  const svgToBase64Img = () => {
+    const svgHtml = document.querySelector("#highChart-dom svg")?.outerHTML;
+    const canvasContext = document.createElement("canvas");
+    canvg(canvasContext, svgHtml);
+    const ctx = canvasContext.getContext("2d");
+    const imageBase64 = ctx?.canvas.toDataURL("image/jpeg");
+
+    const imgEle = document.createElement("img");
+
+    if (!imageBase64) {
+      imgEle.src = "";
+      imgEle.alt = "oops";
+      return imgEle;
+    }
+
+    imgEle.src = imageBase64;
+    return imgEle;
+  };
+
   /**
    * @desc 获取图片dataURL
    */
@@ -63,19 +86,22 @@ export const useExport = () => {
   const handleExportWord = useCallback(async (domSelector = "body") => {
     // 1. 创建canvas画布
     const canvasContext = document.createElement("canvas");
-    const ctx = canvasContext.getContext("2d");
 
-    if (ctx?.fillStyle) {
-      ctx.fillStyle = "green";
-      ctx.fillRect(10, 10, 150, 100);
+    if (!canvasContext.getContext) {
+      return;
     }
 
-    const base64 = ctx?.canvas.toDataURL();
+    const ctx = canvasContext.getContext("2d");
+    if (!ctx) {
+      return;
+    }
+    const svgDom = document.querySelector("#highChart-dom svg");
 
-    // const domHtml = document.querySelector("body")?.innerHTML;
-    const domHtml = `<img src="${base64}" />`;
+    const imageBase64 = svgToBase64Img();
+    svgDom?.parentNode?.replaceChild(imageBase64, svgDom);
 
-    const res = await HTMLtoDOCX(domHtml);
+    const toExportHtml = document.querySelector("body")?.outerHTML;
+    const res = await HTMLtoDOCX(toExportHtml);
     saveAs(res, "lixingjuan.doc");
   }, []);
 

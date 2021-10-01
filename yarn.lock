@@ -3525,6 +3525,14 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, can
   resolved "https://registry.npmmirror.com/caniuse-lite/download/caniuse-lite-1.0.30001263.tgz?cache=0&sync_timestamp=1633064150866&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001263.tgz#7ce7a6fb482a137585cbc908aaf38e90c53a16a4"
   integrity sha1-fOem+0gqE3WFy8kIqvOOkMU6FqQ=
 
+canvg@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.nlark.com/canvg/download/canvg-2.0.0.tgz#9ff77bf8837106e358a12fb3d2bf11aeb60e5b46"
+  integrity sha1-n/d7+INxBuNYoS+z0r8RrrYOW0Y=
+  dependencies:
+    rgbcolor "^1.0.1"
+    stackblur-canvas "^2.0.0"
+
 canvg@^3.0.6:
   version "3.0.8"
   resolved "https://registry.nlark.com/canvg/download/canvg-3.0.8.tgz#9125a4b7033d2f237402241b192587385f4589e6"
