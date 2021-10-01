@@ -6,30 +6,44 @@ import styled from "styled-components";
 import HighChart from "./Chart";
 
 import { useExport } from "./hooks";
+import { handleExportWord } from "./ExportWord";
 
 const ToPdfDomContainer = styled.div`
   position: fixed;
+  .red {
+    color: red;
+  }
   /* top: -200%; */
 `;
 
 export default function DemoExportButton() {
-  const { handleAppend, handleExportPdf, handleExportWord } = useExport();
+  const { handleAppend, handleExportPdf } = useExport();
 
   return (
     <div>
-      <Button onClick={() => handleAppend("#highChart-dom")}>
+      <Button onClick={() => handleAppend("#dom-container")}>
         将Top10的图片append到body
       </Button>
-      <Button onClick={() => handleExportPdf("#highChart-dom")}>
+      <Button onClick={() => handleExportPdf("#dom-container")}>
         导出chart部分的的pdf
       </Button>
-      <Button onClick={() => handleExportWord("#highChart-dom")}>
+      <Button onClick={() => handleExportWord("#dom-container")}>
         导出chart部分的的word
       </Button>
 
-      <ToPdfDomContainer>
-        {/* Demo TOP10 */}
-        <div id="highChart-dom" style={{ width: "800px" }}>
+      <ToPdfDomContainer id="dom-container">
+        <div className="red">一些红色的字, css并不在dom上</div>
+        <div
+          style={{
+            color: "yellow",
+          }}
+        >
+          一些黄色的字, css在dom上
+        </div>
+        <div id="chart1" style={{ width: "800px" }}>
+          <HighChart />
+        </div>
+        <div id="chart2" style={{ width: "800px" }}>
           <HighChart />
         </div>
       </ToPdfDomContainer>

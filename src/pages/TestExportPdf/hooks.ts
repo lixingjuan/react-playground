@@ -100,9 +100,10 @@ export const useExport = () => {
     const imageBase64 = svgToBase64Img();
     svgDom?.parentNode?.replaceChild(imageBase64, svgDom);
 
-    const toExportHtml = document.querySelector("body")?.outerHTML;
-    const res = await HTMLtoDOCX(toExportHtml);
-    saveAs(res, "lixingjuan.doc");
+    const toExportHtml = document.querySelector(".container");
+    toExportHtml && document.querySelector("body")?.append(toExportHtml);
+    // const res = await HTMLtoDOCX(toExportHtml);
+    // saveAs(res, "lixingjuan.doc");
   }, []);
 
   return {
