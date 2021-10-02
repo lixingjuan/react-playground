@@ -43,12 +43,13 @@ export const handleExportWord = async (domSelector: string) => {
    * 2. 如果其中svg节点, 遍历获取, 替换为img节点(todo: 这样就修改了页面了, 是不是应该创建当前页面的副本, 在内存中操作这些)
    */
 
-  const toExportDom = document.querySelector(domSelector);
+  const toExportDomOriginal = document.querySelector(domSelector);
 
-  if (!toExportDom) {
+  if (!toExportDomOriginal) {
     console.error("找不到指定的dom");
     return;
   }
+  const toExportDom = toExportDomOriginal.cloneNode(true) as Element;
 
   const svgDomList = toExportDom?.querySelectorAll("svg");
 
@@ -61,6 +62,7 @@ export const handleExportWord = async (domSelector: string) => {
 
   const toExportHtml = toExportDom?.outerHTML;
   const res = await HTMLtoDOCX(toExportHtml);
-
   saveAs(res, "lixingjuan.doc");
+
+  // toExportDomOriginal?.appendChild(toExportDom);
 };
