@@ -1,0 +1,1552 @@
+{
+  "chart": {
+    "type": "spline",
+    "marginTop": 25,
+    "spacing": [25, 15, 10, 5],
+    "spacingLeft": 20,
+    "spacingRight": 20
+  },
+  "title": {
+    "text": null
+  },
+  "colors": [
+    "#5180ff",
+    "#ff9749",
+    "#1abfb0",
+    "#2d3966",
+    "#f44949",
+    "#f8cb01",
+    "#23a6ff",
+    "#5f4598",
+    "#059184",
+    "#4c3124",
+    "#5a9b56",
+    "#333ad1",
+    "#ffa493",
+    "#dabc74",
+    "#0b3c45",
+    "#8a50cc",
+    "#3a47b5",
+    "#c9751c",
+    "#0e7ab2",
+    "#095d2d",
+    "#91a71b",
+    "#a6775f",
+    "#d16056",
+    "#487ac9",
+    "#2ec2d7",
+    "#cdbe1b",
+    "#a94242",
+    "#6250bb",
+    "#6d9bea",
+    "#7dc9ce",
+    "#ede871",
+    "#e69563"
+  ],
+  "credits": {
+    "enabled": false
+  },
+  "legend": {
+    "enabled": false
+  },
+  "exporting": {
+    "enabled": false
+  },
+  "plotOptions": {
+    "line": {
+      "marker": {
+        "enabled": true,
+        "radius": 0,
+        "states": {
+          "hover": {
+            "radius": 4
+          }
+        }
+      }
+    },
+    "spline": {
+      "marker": {
+        "enabled": true,
+        "radius": 0,
+        "states": {
+          "hover": {
+            "radius": 4
+          }
+        }
+      }
+    },
+    "areaspline": {
+      "marker": {
+        "enabled": true,
+        "radius": 0,
+        "states": {
+          "hover": {
+            "radius": 4
+          }
+        }
+      }
+    },
+    "column": {},
+    "series": {
+      "animation": false,
+      "turboThreshold": 100000,
+      "lineWidth": 2,
+      "states": {
+        "hover": {
+          "lineWidth": 3
+        },
+        "inactive": {
+          "enabled": false,
+          "opacity": 1
+        }
+      },
+      "dataGrouping": {
+        "enabled": false
+      },
+      "connectNulls": true,
+      "zoneAxis": "x"
+    }
+  },
+  "xAxis": {
+    "type": "datetime",
+    "dateTimeLabelFormats": {
+      "millisecond": "%Y-%m-%d",
+      "second": "%Y-%m-%d",
+      "minute": "%Y-%m-%d",
+      "hour": "%Y-%m-%d",
+      "day": "%Y-%m-%d",
+      "week": "%Y-%m-%d",
+      "month": "%Y-%m",
+      "year": "%Y"
+    },
+    "lineColor": "#e5e5e5",
+    "lineWidth": 1,
+    "tickLength": 8,
+    "tickWidth": 1,
+    "tickColor": "#e5e5e5",
+    "tickPixelInterval": 120,
+    "labels": {
+      "style": {
+        "color": "#666666",
+        "fontSize": "12px"
+      }
+    },
+    "ordinal": false,
+    "minRange": 31536000000,
+    "startOnTick": false
+  },
+  "yAxis": [
+    {
+      "title": {
+        "align": "high",
+        "y": -15,
+        "rotation": 0,
+        "offset": 0,
+        "style": {
+          "color": "#333",
+          "fontSize": "12px",
+          "minWidth": "30px",
+          "textAlign": "right"
+        },
+        "useHTML": true,
+        "text": "Contribution(%)",
+        "x": 0,
+        "enabled": true,
+        "reserveSpace": false,
+        "textAlign": "left"
+      },
+      "labels": {
+        "style": {
+          "color": "#333",
+          "fontSize": "12px"
+        },
+        "x": 0,
+        "enabled": true,
+        "y": 4,
+        "reserveSpace": true,
+        "align": "left"
+      },
+      "opposite": false,
+      "showLastLabel": true,
+      "showFirstLabel": true,
+      "margin": 10,
+      "_maxTick": 36.19785161129153,
+      "text": "Contribution(%)"
+    }
+  ],
+  "navigator": {
+    "enabled": false,
+    "outlineColor": "#ddd",
+    "series": {
+      "color": "#E3E8EC"
+    },
+    "maskFill": "rgba(211, 229, 247, 0.2)",
+    "handles": {
+      "backgroundColor": "#95C9EF",
+      "borderColor": "#fff"
+    },
+    "xAxis": {
+      "type": "datetime",
+      "dateTimeLabelFormats": {
+        "millisecond": "%Y-%m-%d",
+        "second": "%Y-%m-%d",
+        "minute": "%Y-%m-%d",
+        "hour": "%Y-%m-%d",
+        "day": "%Y-%m-%d",
+        "week": "%Y-%m-%d",
+        "month": "%Y-%m",
+        "year": "%Y"
+      },
+      "ordinal": false
+    },
+    "height": 26,
+    "tickWidth": 0,
+    "lineWidth": 0,
+    "gridLineWidth": 1,
+    "tickPixelInterval": 200,
+    "labels": {
+      "align": "left",
+      "style": {
+        "color": "#888"
+      },
+      "x": 3,
+      "y": -4
+    }
+  },
+  "tooltip": {
+    "enabled": true,
+    "shadow": false,
+    "crosshairs": [
+      {
+        "width": 1.5,
+        "color": "#ccc"
+      }
+    ],
+    "shared": true,
+    "useHTML": true,
+    "style": {
+      "padding": 0,
+      "width": "auto"
+    },
+    "hideDelay": 100,
+    "backgroundColor": "rgba(255, 255, 255, 0.9)",
+    "borderWidth": 1,
+    "borderRadius": "4",
+    "borderColor": "#E9E9E9",
+    "split": false
+  },
+  "series": [
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Ex-Factory Price: Wrapping Paper: Corrugated Paper: 140G",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": 23.484903601309572,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": 36.19785161129153,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": 1.675587619269258,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": 1.2889812889812888,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1614528000000,
+          "y": 0.5603221852565227,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1617206400000,
+          "y": -6.952191235059761,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": 14.31372549019608,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": -3.043831168831169,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 0.09465215333648772,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1630425600000,
+          "y": -16.937161880982103,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": 0.2022010076902679,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#5180ff",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#5180ff"],
+          [1, "rgba(81,128,255,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Imports Quantity: Newsprint",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": 21.084030556566027,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1609430400000,
+          "y": 0.6652806652806652,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1612108800000,
+          "y": 0.5479771481870118,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1617206400000,
+          "y": -8.92430278884462,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": 7.803921568627452,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 9.13149350649351,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 11.594888783719828,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1627747200000,
+          "y": 0.8096366508688785,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1633017600000,
+          "y": -5.270485282418457,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#ff9749",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#ff9749"],
+          [1, "rgba(255,151,73,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Imports Value: Pulp: Monthly Value",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": 14.841760640232815,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": -9.492880339745192,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1609430400000,
+          "y": 1.1476091476091475,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1612108800000,
+          "y": 1.3990905911157747,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1614528000000,
+          "y": 1.3132551216949748,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1617206400000,
+          "y": 1.6932270916334664,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": 4.392156862745098,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1625068800000,
+          "y": 3.786086133459536,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1627747200000,
+          "y": 1.3625592417061612,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1630425600000,
+          "y": 7.1161048689138555,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": -0.8618403606470433,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#1abfb0",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#1abfb0"],
+          [1, "rgba(26,191,176,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "PPI: YoY: Papermaking and Paper Products",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": 0.17460894870862134,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": 2.847864101923557,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": -2.3504770770304866,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": 1.372141372141372,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1612108800000,
+          "y": 0.9443861490031479,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1614528000000,
+          "y": 1.103134302223779,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1617206400000,
+          "y": 0.2988047808764941,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": 7.411764705882352,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 5.803571428571429,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1630425600000,
+          "y": -6.491885143570536,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": -0.31158843808008496,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#2d3966",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#2d3966"],
+          [1, "rgba(45,57,102,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Number of Warehouse Receipts: Paper Pulp: Total",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": 0.05820298290287381,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": -3.3474893829627783,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": -4.398417500581801,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": 7.650727650727649,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1614528000000,
+          "y": 1.645946419191035,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1617206400000,
+          "y": 4.46215139442231,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": 3.9215686274509802,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 0.6493506493506498,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 9.03928064363464,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1627747200000,
+          "y": -0.6714060031595577,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1630425600000,
+          "y": 6.4086558468580925,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": 5.011933174224344,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#f44949",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#f44949"],
+          [1, "rgba(244,73,73,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Express: Business Volume",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": -0.09457984721716989,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": 2.0234823882088433,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": -0.44216895508494297,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": 6.893970893970894,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1612108800000,
+          "y": 1.993704092339979,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1614528000000,
+          "y": 7.196638066888461,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1617206400000,
+          "y": 1.5139442231075697,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": -6,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 0.7711038961038963,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1627747200000,
+          "y": 1.6785150078988942,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1630425600000,
+          "y": 12.109862671660421,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": -0.2751259612834792,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#f8cb01",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#f8cb01"],
+          [1, "rgba(248,203,1,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Total Profit: Paper Making and Paper Products: Cumulative Value",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": -1.2877409967260824,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1606752000000,
+          "y": -8.913195252501746,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": 27.476091476091476,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1612108800000,
+          "y": 11.787338230150402,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1614528000000,
+          "y": 7.844510593591315,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1625068800000,
+          "y": 34.690014197823,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1627747200000,
+          "y": 15.758293838862562,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1630425600000,
+          "y": 7.324178110694963,
+          "periodDate": "2021-09"
+        }
+      ],
+      "color": "#23a6ff",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#23a6ff"],
+          [1, "rgba(35,166,255,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Fixed Assets Investment Completed: Manufacturing: Printing And Recording Media Reproduction Industry: Cumulative YoY",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": -1.2877409967260824,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": -0.7994004496627528,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": -0.09308820107051437,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1612108800000,
+          "y": 6.27258948350239,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1617206400000,
+          "y": -3.545816733067729,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": 4.745098039215686,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 9.902597402597403,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 0.42593469001419765,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1630425600000,
+          "y": 1.7478152309612982,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": 0.09281357730045083,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#5f4598",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#5f4598"],
+          [1, "rgba(95,69,152,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Chinabond Treasury Bond Yield to Maturity: 10Y",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": -2.7064387049836305,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": 5.046215338496128,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": -2.3970211775657435,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": 0.6486486486486486,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1614528000000,
+          "y": 1.3482752582735074,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1617206400000,
+          "y": -0.1394422310756972,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": 3.686274509803922,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 3.8961038961038965,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 2.176999526739233,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1627747200000,
+          "y": 2.448657187993681,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1633017600000,
+          "y": -2.555688146380271,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#059184",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#059184"],
+          [1, "rgba(5,145,132,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Futures Closing Price (Continuous): Pulp",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1601481600000,
+          "y": -2.953801382320844,
+          "periodDate": "2020-10"
+        },
+        {
+          "x": 1604160000000,
+          "y": 6.145390956782413,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": -7.167791482429603,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": -5.006237006237005,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1612108800000,
+          "y": 5.188294275387665,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1614528000000,
+          "y": 10.365960427245668,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1622476800000,
+          "y": 1.7857142857142863,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 13.393279697113108,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1630425600000,
+          "y": -16.437786100707445,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": 74.9502784407319,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#4c3124",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#4c3124"],
+          [1, "rgba(76,49,36,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Printed Matter: Imports Quantity",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1604160000000,
+          "y": -1.5988008993255067,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": 19.804514777751915,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1617206400000,
+          "y": 9.48207171314741,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": -11.960784313725489,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 34.94318181818182,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 3.218173213440606,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1627747200000,
+          "y": 18.46366508688784,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1630425600000,
+          "y": 5.2018310445276725,
+          "periodDate": "2021-09"
+        },
+        {
+          "x": 1633017600000,
+          "y": 0.8717846725006633,
+          "periodDate": "2021-10"
+        }
+      ],
+      "color": "#5a9b56",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#5a9b56"],
+          [1, "rgba(90,155,86,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Ex-Factory Price: Wrapping Paper: Cardboard Paper: 140G",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1604160000000,
+          "y": -8.643517361978516,
+          "periodDate": "2020-11"
+        },
+        {
+          "x": 1606752000000,
+          "y": 9.960437514545031,
+          "periodDate": "2020-12"
+        },
+        {
+          "x": 1609430400000,
+          "y": 1.588357588357588,
+          "periodDate": "2021-01"
+        },
+        {
+          "x": 1614528000000,
+          "y": 0.6128523901243216,
+          "periodDate": "2021-03"
+        },
+        {
+          "x": 1617206400000,
+          "y": -5.816733067729084,
+          "periodDate": "2021-04"
+        },
+        {
+          "x": 1619798400000,
+          "y": -3.7647058823529416,
+          "periodDate": "2021-05"
+        },
+        {
+          "x": 1622476800000,
+          "y": 3.7337662337662345,
+          "periodDate": "2021-06"
+        },
+        {
+          "x": 1625068800000,
+          "y": 10.36441079034548,
+          "periodDate": "2021-07"
+        },
+        {
+          "x": 1627747200000,
+          "y": 11.433649289099527,
+          "periodDate": "2021-08"
+        },
+        {
+          "x": 1630425600000,
+          "y": 0.998751560549313,
+          "periodDate": "2021-09"
+        }
+      ],
+      "color": "#333ad1",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#333ad1"],
+          [1, "rgba(51,58,209,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Consumption: Box Board Paper",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1612108800000,
+          "y": 16.49760988690684,
+          "periodDate": "2021-02"
+        }
+      ],
+      "color": "#ffa493",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#ffa493"],
+          [1, "rgba(255,164,147,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Consumption: Corrugated Board Paper",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1612108800000,
+          "y": 12.90661070304302,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1627747200000,
+          "y": 0.5134281200631912,
+          "periodDate": "2021-08"
+        }
+      ],
+      "color": "#dabc74",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#dabc74"],
+          [1, "rgba(218,188,116,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Waste Paper Recovery Rate: Domestic",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1612108800000,
+          "y": 1.130931561151918,
+          "periodDate": "2021-02"
+        },
+        {
+          "x": 1627747200000,
+          "y": -0.039494470774091635,
+          "periodDate": "2021-08"
+        }
+      ],
+      "color": "#0b3c45",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#0b3c45"],
+          [1, "rgba(11,60,69,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    },
+    {
+      "unit": "%",
+      "frequency": "Monthly",
+      "name": "Consumption: Corrugating Medium",
+      "label": "值（%）",
+      "lineWidth": 2,
+      "data": [
+        {
+          "x": 1614528000000,
+          "y": 18.770793206093504,
+          "periodDate": "2021-03"
+        }
+      ],
+      "color": "#8a50cc",
+      "coordinate": "left",
+      "accuracy": 2,
+      "fillColor": {
+        "linearGradient": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 0,
+          "y2": 1
+        },
+        "stops": [
+          [0, "#8a50cc"],
+          [1, "rgba(138,80,204,0)"]
+        ]
+      },
+      "zIndex": 5,
+      "type": "line",
+      "step": false,
+      "showInNavigator": true,
+      "navigatorOptions": {
+        "type": "line",
+        "step": false
+      },
+      "hasPrivilege": true,
+      "marker": {
+        "enabled": true,
+        "radius": 4
+      },
+      "visible": true,
+      "events": {},
+      "yTitle": "Contribution(%)",
+      "yAxis": 0
+    }
+  ],
+  "rangeSelector": {
+    "enabled": false
+  },
+  "scrollbar": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,12 @@
+.legend {
+  display: grid;
+  color: rgb(102, 102, 102);
+  grid-template-columns: 1fr 1fr;
+}
+
+.legend li {
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

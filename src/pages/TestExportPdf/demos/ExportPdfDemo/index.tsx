@@ -42,6 +42,7 @@ const useExportPdf = (): [
 const handleGenerateDataUrl = (domSelector = "body"): any => {
   const realDomSelector =
     typeof domSelector === "string" ? domSelector : "body";
+
   const node = document.querySelector(realDomSelector);
 
   return domtoimage
@@ -65,8 +66,11 @@ const ExportPdfDemo = () => {
     pdfObj.addPage();
   };
 
-  const handleAddText = (str: string | number) => {
-    pdfObj.text(String(str), 10, 10);
+  const handleAddText = (/* str: string | number */) => {
+    pdfObj.setTextColor("red");
+    pdfObj.text("222", 10, 10);
+    pdfObj.setTextColor("green");
+    pdfObj.text("888", 10, 30);
   };
 
   return (
@@ -77,7 +81,7 @@ const ExportPdfDemo = () => {
           style={{ marginLeft: "20px" }}
           onClick={handleAddImage}
         >
-          给实例添加一个图片
+          将下图chart加入pdf
         </Button>
 
         <Button
@@ -91,9 +95,9 @@ const ExportPdfDemo = () => {
         <Button
           type="primary"
           style={{ marginLeft: "20px" }}
-          onClick={() => handleAddText(2222)}
+          onClick={handleAddText}
         >
-          添加数字 2222
+          添加数字 222, 红色, 888, 绿色
         </Button>
         <Button
           type="primary"
