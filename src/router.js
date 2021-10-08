@@ -3,6 +3,7 @@ import TestAHooks from "./pages/TestAHooks";
 import TestKey from "./pages/TestKey";
 import TestExportPdf from "./pages/TestExportPdf";
 import TestAntd from "./pages/TestAntd";
+import TestCanvas from "./pages/TestCanvas";
 import TestSWR from "./pages/TestSWR";
 import TestResizable from "./pages/TestResizable/index";
 import TestFlexTable from "./pages/TestFlexTable";
@@ -35,6 +36,11 @@ const routes = [
     path: "/TestAntd",
     desc: "测试TestAntd",
     component: TestAntd,
+  },
+  {
+    path: "/TestCanvas",
+    desc: "测试TestCanvas",
+    component: TestCanvas,
   },
   {
     path: "/TestKey",

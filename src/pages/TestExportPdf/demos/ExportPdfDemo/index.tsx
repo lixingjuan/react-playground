@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Row } from "antd";
 import { jsPDF as JsPDF } from "jspdf";
 import domtoimage from "dom-to-image";
-import HighChart from "../../../../components/HighChart";
+import HighChart from "../../../../components/HighChartDemo";
 
 /**
  * @desc 我应该有自己的状态

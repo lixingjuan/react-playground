@@ -1,6 +1,6 @@
 import { Button, Row } from "antd";
 import { exportWord } from "./utils";
-import HighChart from "../../../../components/HighChart";
+import HighChart from "../../../../components/HighChartDemo";
 
 const ExportWordDemo = () => {
   return (
