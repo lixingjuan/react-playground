@@ -32,3 +32,7 @@
 .card-wrapper .ant-card .ant-card-body {
   padding: 50px 24px;
 }
+
+* {
+  text-align: left;
+}

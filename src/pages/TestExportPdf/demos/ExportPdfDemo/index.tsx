@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Row } from "antd";
 import { jsPDF as JsPDF } from "jspdf";
 import domtoimage from "dom-to-image";
-import HighChart from "../../../../components/HighChartDemo";
+import TestDom from "./TestDom";
+import BtnPreview from "./BtnPreview";
 
 /**
  * @desc 我应该有自己的状态
@@ -99,6 +100,9 @@ const ExportPdfDemo = () => {
         >
           添加数字 222, 红色, 888, 绿色
         </Button>
+
+        <BtnPreview />
+
         <Button
           type="primary"
           style={{ marginLeft: "20px" }}
@@ -108,22 +112,7 @@ const ExportPdfDemo = () => {
         </Button>
       </Row>
 
-      {/* 测试dom */}
-      <div
-        id="pdf-demo-dom"
-        style={{ width: "800px", border: "1px #666 dashed", padding: "20px" }}
-      >
-        <h3>你好，下面是个high chart</h3>
-        <HighChart />
-
-        <h3>下面是红色文字</h3>
-        <span style={{ color: "red" }}>我是红色文字</span>
-
-        <h3>下面分别是不同大小文字</h3>
-        <span style={{ fontSize: "12px" }}>12px文字</span>
-        <span style={{ fontSize: "18px" }}>18px文字</span>
-        <span style={{ fontSize: "20px" }}>20px文字</span>
-      </div>
+      <TestDom />
     </>
   );
 };
