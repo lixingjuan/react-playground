@@ -1,5 +1,3 @@
-/** Copyright © 2013-2021 DataYes, All Rights Reserved. */
-
 /* @ts-ignore */
 import tempCanvg from "canvg";
 /* @ts-ignore */
@@ -15,6 +13,10 @@ const canvg = tempCanvg;
  * @return 返回img dom
  */
 const svgToBase64Img = (svgHtml: string) => {
+  if (!!svgHtml === false || typeof svgHtml !== "string") {
+    throw TypeError("The parameter format must be a string.");
+  }
+
   const canvasContext = document.createElement("canvas");
   canvg(canvasContext, svgHtml);
   const ctx = canvasContext.getContext("2d");
@@ -33,24 +35,14 @@ const svgToBase64Img = (svgHtml: string) => {
 };
 
 /**
- * @desc 导出word
- * @param {string} domSelector dom选择器
- * 由于html-to-docx不能导出图片, 所以需要将图片进行解析为base64
+ * @desc 将制定的dom 进行克隆、svg 替换， 并返回
+ * @param {Element} toExportDomOriginal
  */
-export const handleExportWord = async (domSelector: string) => {
-  /**
-   * 1. 获取要导出的dom
-   * 2. 如果其中svg节点, 遍历获取, 替换为img节点(todo: 这样就修改了页面了, 是不是应该创建当前页面的副本, 在内存中操作这些)
-   */
-
-  const toExportDomOriginal = document.querySelector(domSelector);
-
-  if (!toExportDomOriginal) {
-    console.error("找不到指定的dom");
-    return;
-  }
+const getBlob = async (toExportDomOriginal: Element) => {
+  // 对用户指定的dom执行深拷贝
   const toExportDom = toExportDomOriginal.cloneNode(true) as Element;
 
+  // 将其中的svg dom 替换为 img标签
   const svgDomList = toExportDom?.querySelectorAll("svg");
 
   if (svgDomList) {
@@ -62,7 +54,31 @@ export const handleExportWord = async (domSelector: string) => {
 
   const toExportHtml = toExportDom?.outerHTML;
   const res = await HTMLtoDOCX(toExportHtml);
-  saveAs(res, "lixingjuan.doc");
+  return res;
+};
 
-  // toExportDomOriginal?.appendChild(toExportDom);
+/**
+ * @desc 导出word
+ * @param {string} domSelector dom选择器
+ * 由于html-to-docx不能导出图片, 所以需要将图片进行解析为base64
+ */
+export const exportWord = async (domSelector: string) => {
+  if (!!domSelector === false || typeof domSelector !== "string") {
+    throw TypeError("The 'domSelector' must be a string.");
+  }
+
+  const toExportDomOriginal = document.querySelector(domSelector);
+
+  if (!toExportDomOriginal) {
+    console.error("找不到指定的dom");
+    return;
+  }
+
+  getBlob(toExportDomOriginal)
+    .then((resBlob) => {
+      saveAs(resBlob, "lixingjuan.doc");
+    })
+    .catch((err) => {
+      console.log("export error, error message=>", err);
+    });
 };

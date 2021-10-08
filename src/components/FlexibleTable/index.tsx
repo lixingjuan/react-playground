@@ -1,5 +1,3 @@
-/** Copyright © 2013-2020 DataYes, All Rights Reserved. */
-
 import React, { useState, useCallback, useMemo } from "react";
 import { ColumnsType, TableProps } from "antd/lib/table/Table";
 import { Table } from "antd";
