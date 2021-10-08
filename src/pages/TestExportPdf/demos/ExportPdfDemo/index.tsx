@@ -4,6 +4,7 @@ import { jsPDF as JsPDF } from "jspdf";
 import domtoimage from "dom-to-image";
 import TestDom from "./TestDom";
 import BtnPreview from "./BtnPreview";
+import BtnAddTable from "./BtnAddTable";
 
 /**
  * @desc 我应该有自己的状态
@@ -77,6 +78,8 @@ const ExportPdfDemo = () => {
   return (
     <>
       <Row>
+        <BtnAddTable />
+
         <Button
           type="primary"
           style={{ marginLeft: "20px" }}

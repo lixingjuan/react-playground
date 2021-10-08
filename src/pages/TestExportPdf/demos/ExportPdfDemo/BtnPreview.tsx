@@ -62,30 +62,33 @@ export default function BtnPreview() {
 
   // 打开新窗口预览
   const handlePreview = async (currentPage: boolean) => {
-    const html = document.querySelector("#pdf-demo-dom");
-    const toExportHtml = await getExportHtml(html!);
+    const aaaDom = document.getElementById("aaaa")!.outerHTML;
+    const bbbbDom = document.getElementById("bbbb")!.outerHTML;
 
-    pdf.html(toExportHtml, {
+    pdf = await pdf.html(aaaDom, {
       autoPaging: true,
       image: {
         type: "jpeg",
         quality: 1,
       },
       width: 200,
-      callback: function (pdf) {
-        if (currentPage) {
-          var iframe = document.createElement("iframe");
-          iframe.setAttribute(
-            "style",
-            "position:absolute;top:0;right:0;height:100%; width:600px"
-          );
-          document.body.appendChild(iframe);
-          iframe.src = pdf.output("datauristring");
-        } else {
-          pdf.output("dataurlnewwindow");
-        }
-      },
     });
+
+    debugger;
+
+    pdf.addPage("a4");
+    pdf.text("split line", 30, 30);
+
+    pdf = await pdf.html(bbbbDom, {
+      autoPaging: true,
+      image: {
+        type: "jpeg",
+        quality: 1,
+      },
+      width: 200,
+    });
+
+    pdf.save("lixingjuan.pdf");
   };
 
   return (

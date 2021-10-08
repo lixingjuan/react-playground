@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "antd";
 import { jsPDF as JsPDF } from "jspdf";
 import canvg from "canvg";
+import "jspdf-autotable";
 
 /**
  * @desc 传入svg字符串
@@ -53,24 +54,50 @@ const getExportHtml = async (toExportDomOriginal: Element) => {
 };
 
 export default function BtnPreview() {
-  var pdf = new JsPDF("p", "pt", "a4");
+  var pdf = new JsPDF();
 
   // 打开新窗口预览
-  const handleAddHtml = async () => {
-    const html = document.querySelector("#pdf-demo-dom");
-    const toExportHtml = await getExportHtml(html!);
+  const handleAddTable = async (preview = false) => {
+    pdf.table(
+      10,
+      10,
+      [
+        { name: "lixingjuan", age: "25" },
+        { name: "li", age: "18" },
+        { name: "li", age: "22" },
+      ],
+      ["name", "age"],
+      {
+        css: {
+          "font-size": 0.5,
+        },
+        headerBackgroundColor: "f6f6f6",
+        // lineWidth: 0,
+      }
+    );
 
-    pdf.html(toExportHtml, {
-      autoPaging: true,
-      image: {
-        type: "jpeg",
-        quality: 1,
-      },
-      width: 200,
-      callback: function (pdf) {
-        pdf.output("dataurlnewwindow");
-      },
+    /* @ts-ignore-next-line */
+    // pdf.autoTable({ html: "#my-table" });
+
+    /* @ts-ignore-next-line */
+    pdf.autoTable({
+      head: [["Name", "Email", "Country"]],
+      body: [
+        ["David", "david@example.com", "Sweden"],
+        ["Castille", "castille@example.com", "Spain"],
+        ["David", "david@example.com", "Sweden"],
+        ["Castille", "castille@example.com", "Spain"],
+      ],
     });
+
+    pdf.setLineWidth(0.1);
+    pdf.line(0, 0, 20, 20);
+
+    if (preview) {
+      pdf.output("dataurlnewwindow");
+    } else {
+      pdf.save("lixingjuan.pdf");
+    }
   };
 
   return (
@@ -78,9 +105,16 @@ export default function BtnPreview() {
       <Button
         type="primary"
         style={{ marginLeft: "20px" }}
-        onClick={handleAddHtml}
+        onClick={() => handleAddTable(false)}
       >
-        添加html
+        添加table&&导出
+      </Button>
+      <Button
+        type="primary"
+        style={{ marginLeft: "20px" }}
+        onClick={() => handleAddTable(true)}
+      >
+        添加table&&预览
       </Button>
     </div>
   );
