@@ -75,10 +75,10 @@ const data = [
   },
 ];
 
-export default function TestDomTable() {
-  return (
-    <div>
-      <Table columns={columns} dataSource={data} />
-    </div>
-  );
+// interface Props {
+//   id?: string;
+// }
+
+export default function TestDomTable({ id = "" }) {
+  return <Table columns={columns} dataSource={data} id={id} />;
 }

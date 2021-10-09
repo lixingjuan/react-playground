@@ -2,7 +2,9 @@ import React from "react";
 import { Button } from "antd";
 import { jsPDF as JsPDF } from "jspdf";
 import canvg from "canvg";
-import "jspdf-autotable";
+import autoTable from "jspdf-autotable";
+
+import TestDomTable from "./TestDomTable";
 
 /**
  * @desc 传入svg字符串
@@ -76,18 +78,43 @@ export default function BtnPreview() {
       }
     );
 
-    /* @ts-ignore-next-line */
-    // pdf.autoTable({ html: "#my-table" });
+    autoTable(pdf, { html: "table" });
 
-    /* @ts-ignore-next-line */
-    pdf.autoTable({
+    autoTable(pdf, {
       head: [["Name", "Email", "Country"]],
       body: [
-        ["David", "david@example.com", "Sweden"],
-        ["Castille", "castille@example.com", "Spain"],
-        ["David", "david@example.com", "Sweden"],
-        ["Castille", "castille@example.com", "Spain"],
+        [
+          {
+            content: "Text",
+            rowSpan: 2,
+            styles: { halign: "center", valign: "middle" },
+          },
+          "david@example.com",
+          "Sweden",
+          "SwedenSwedenSwedenSwedenSweden",
+        ],
+        [
+          // "Castille",
+          "castille@example.com",
+          "Spain",
+          "SpainSpainSpainSpainSpain",
+        ],
+        [
+          "David",
+          "david@example.com",
+          "Sweden",
+          "SwedenSwedenSwedenSwedenSweden",
+        ],
+        [
+          "Castille",
+          "castille@example.com",
+          "Spain",
+          "SpainSpainSpainSpainSpain",
+        ],
       ],
+      headStyles: {
+        fillColor: "red",
+      },
     });
 
     pdf.setLineWidth(0.1);
@@ -116,6 +143,8 @@ export default function BtnPreview() {
       >
         添加table&&预览
       </Button>
+
+      <TestDomTable id="#my-table" />
     </div>
   );
 }

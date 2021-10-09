@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Button, Row } from "antd";
+import { Button, Row, Card } from "antd";
 import { jsPDF as JsPDF } from "jspdf";
 import domtoimage from "dom-to-image";
+import { HeartTwoTone } from "@ant-design/icons";
+
 import TestDom from "./TestDom";
 import BtnPreview from "./BtnPreview";
 import BtnAddTable from "./BtnAddTable";
+
+const data = [
+  {
+    title: BtnAddTable,
+    CompElement: BtnAddTable,
+  },
+];
 
 /**
  * @desc 我应该有自己的状态
@@ -77,9 +86,27 @@ const ExportPdfDemo = () => {
 
   return (
     <>
-      <Row>
-        <BtnAddTable />
+      <div>
+        {data.map(({ title, CompElement }) => (
+          <Card
+            style={{
+              borderColor: "#7fcbfa",
+            }}
+            title={
+              <>
+                <HeartTwoTone twoToneColor="#eb2f96" />
+                <span>{title}</span>
+              </>
+            }
+          >
+            <CompElement />
+          </Card>
+        ))}
+      </div>
 
+      <hr style={{ marginTop: "3000px" }} />
+
+      <Row>
         <Button
           type="primary"
           style={{ marginLeft: "20px" }}
