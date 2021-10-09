@@ -1,4 +1,4 @@
-import { List, Card } from "antd";
+import { Card } from "antd";
 import usePersistFn from "./components/usePersistFn";
 import useCreation from "./components/useCreation";
 import useDebounce from "./components/useDebounce";

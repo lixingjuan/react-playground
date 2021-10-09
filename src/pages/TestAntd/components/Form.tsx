@@ -8,36 +8,30 @@ const layout = {
     span: 16,
   },
 };
-const tailLayout = {
-  wrapperCol: {
-    offset: 8,
-    span: 16,
-  },
-};
 
 const Demo = () => {
   const [form] = Form.useForm();
 
-  const onGenderChange = (value: any) => {
-    switch (value) {
-      case "male":
-        form.setFieldsValue({
-          note: "Hi, man!",
-        });
-        return;
+  // const onGenderChange = (value: any) => {
+  //   switch (value) {
+  //     case "male":
+  //       form.setFieldsValue({
+  //         note: "Hi, man!",
+  //       });
+  //       return;
 
-      case "female":
-        form.setFieldsValue({
-          note: "Hi, lady!",
-        });
-        return;
+  //     case "female":
+  //       form.setFieldsValue({
+  //         note: "Hi, lady!",
+  //       });
+  //       return;
 
-      case "other":
-        form.setFieldsValue({
-          note: "Hi there!",
-        });
-    }
-  };
+  //     case "other":
+  //       form.setFieldsValue({
+  //         note: "Hi there!",
+  //       });
+  //   }
+  // };
 
   const onFinish = (values: any) => {
     console.log(values);

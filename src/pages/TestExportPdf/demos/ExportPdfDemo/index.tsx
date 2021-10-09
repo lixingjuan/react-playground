@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button, Row, Card } from "antd";
 import { jsPDF as JsPDF } from "jspdf";
 import domtoimage from "dom-to-image";
@@ -20,32 +20,32 @@ const data = [
  * 支持添加dom
  * @param {string} selector
  */
-const useExportPdf = (): [
-  string,
-  {
-    addHtml: (val: string) => void;
-    savePdf: () => void;
-  }
-] => {
-  //
-  const [stack, setStack] = useState("");
+// const useExportPdf = (): [
+//   string,
+//   {
+//     addHtml: (val: string) => void;
+//     savePdf: () => void;
+//   }
+// ] => {
+//   //
+//   const [stack, setStack] = useState("");
 
-  /**
-   * @desc 该方法用于向stack添加dom
-   * @param {string} selector
-   */
-  const addHtml = (selector: string) => {
-    const tempDom = document.querySelector(selector)?.outerHTML;
-    setStack((pre) => `${pre}${tempDom}`);
-  };
+//   /**
+//    * @desc 该方法用于向stack添加dom
+//    * @param {string} selector
+//    */
+//   const addHtml = (selector: string) => {
+//     const tempDom = document.querySelector(selector)?.outerHTML;
+//     setStack((pre) => `${pre}${tempDom}`);
+//   };
 
-  /**
-   * @desc 该方法用于下载
-   */
-  const savePdf = () => {};
+//   /**
+//    * @desc 该方法用于下载
+//    */
+//   const savePdf = () => {};
 
-  return [stack, { addHtml, savePdf }];
-};
+//   return [stack, { addHtml, savePdf }];
+// };
 
 /**
  * @desc 获取图片dataURL

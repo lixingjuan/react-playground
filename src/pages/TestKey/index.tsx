@@ -25,7 +25,7 @@ export default function Index() {
   };
 
   const addItemNanoid = () => {
-    const id = +new Date();
+    // const id = +new Date();
     setTempArr((pre) => [
       {
         key: 1,

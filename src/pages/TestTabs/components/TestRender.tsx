@@ -6,11 +6,11 @@ const { TabPane } = Tabs;
 const OnceMap = {} as any;
 const renderOnce = (name: string) => (OnceMap[name] = (OnceMap[name] || 0) + 1);
 
-const Content = ({ name }: { name: string }) => (
-  <TabPane tab={name} key={name}>
-    <div>渲染次数{renderOnce("name")}</div>
-  </TabPane>
-);
+// const Content = ({ name }: { name: string }) => (
+//   <TabPane tab={name} key={name}>
+//     <div>渲染次数{renderOnce("name")}</div>
+//   </TabPane>
+// );
 
 const getInitTabArr = () => [
   { name: "li", age: 888 },
