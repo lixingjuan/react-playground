@@ -93,6 +93,8 @@ const ExportPdfDemo = () => {
 
   return (
     <>
+      <BtnPreview pdfInstance={pdf} />
+
       <div>
         {data.map(({ title, CompElement }) => (
           <Card
@@ -138,8 +140,6 @@ const ExportPdfDemo = () => {
         >
           添加数字 222, 红色, 888, 绿色
         </Button>
-
-        <BtnPreview />
 
         <Button
           type="primary"

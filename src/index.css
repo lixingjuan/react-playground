@@ -25,3 +25,7 @@ h5,
 h6 {
   text-align: left;
 }
+
+.CodeMirror {
+  height: max-content !important;
+}

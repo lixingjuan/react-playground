@@ -1,10 +1,12 @@
+import "./index.css";
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import "codemirror/lib/codemirror.css";
+
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
