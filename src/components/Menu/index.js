@@ -1,9 +1,18 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import { Menu } from "antd";
+import { Button, Menu } from "antd";
 import { useHistory } from "react-router";
-function IndexPage(props) {
+import { useBoolean } from "ahooks";
+import styled from "styled-components";
+
+const MenuStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+function MenuComp(props) {
   const { routes } = props;
+
+  const [collapsed, { toggle: setCollapsed }] = useBoolean(true);
   const {
     location: { pathname },
   } = useHistory();
@@ -12,20 +21,25 @@ function IndexPage(props) {
     routes.find((it) => it.path === pathname)?.desc || "Home";
 
   return (
-    <Menu
-      mode={"inline"}
-      style={{ width: 256, height: "100vh" }}
-      defaultSelectedKeys={defaultSelectedKeys}
-    >
-      {routes.map((it) => (
-        <Menu.Item key={it.desc}>
-          <NavLink to={it.path} activeClassName="hurray">
-            {it.desc}
-          </NavLink>
-        </Menu.Item>
-      ))}
-    </Menu>
+    <MenuStyle>
+      <Button onClick={() => setCollapsed()}>collapsed</Button>
+      collapsed{`${collapsed}`}
+      <Menu
+        mode={"inline"}
+        style={{ height: "100vh" }}
+        defaultSelectedKeys={defaultSelectedKeys}
+        inlineCollapsed={collapsed}
+      >
+        {routes.map((it) => (
+          <Menu.Item key={it.desc}>
+            <NavLink to={it.path} activeClassName="hurray">
+              {it.desc}
+            </NavLink>
+          </Menu.Item>
+        ))}
+      </Menu>
+    </MenuStyle>
   );
 }
 
-export default IndexPage;
+export default MenuComp;

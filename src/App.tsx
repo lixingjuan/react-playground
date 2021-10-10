@@ -1,20 +1,25 @@
 import "./App.css";
-// import "./antd.css";
-import { Row, Col } from "antd";
 import { Switch, Route } from "react-router";
+import styled from "styled-components";
 
 import AppMenu from "./components/Menu";
 // import NewMenu from "./components/NewMenu";
 import routes from "./router";
 
+const AppStyled = styled.div`
+  display: flex;
+  .content {
+    flex: 2;
+    padding: 50px;
+  }
+`;
+
 function App() {
   return (
-    <Row className="App">
-      <Col span={4}>
-        <AppMenu routes={routes} />
-      </Col>
+    <AppStyled className="App">
+      <AppMenu routes={routes} />
 
-      <Col span={20}>
+      <div className="content">
         <Switch>
           {routes.map((it) => (
             <Route
@@ -25,8 +30,8 @@ function App() {
             />
           ))}
         </Switch>
-      </Col>
-    </Row>
+      </div>
+    </AppStyled>
   );
 }
 
