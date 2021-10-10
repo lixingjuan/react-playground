@@ -99,5 +99,5 @@ export const pdfNewPagePreview = (pdf: any) => {
 };
 
 export interface AllProps {
-  pdfInstance: jsPDF;
+  pdf: jsPDF;
 }

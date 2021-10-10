@@ -5,8 +5,7 @@ import TestDomTable from "./TestDomTable";
 import TestCodeMirror from "./TestCodeMirror";
 import { pdfNewPagePreview, AllProps } from "./utils";
 
-export default function BtnPreview({ pdfInstance }: AllProps) {
-  var pdf = pdfInstance;
+export default function BtnPreview({ pdf }: AllProps) {
   const [code, setCode] = useState<string>("");
 
   useEffect(() => {
@@ -82,7 +81,7 @@ export default function BtnPreview({ pdfInstance }: AllProps) {
     }
     handleAddTable();
     setCode(handleAddTable.toString());
-  }, []);
+  }, [pdf]);
   // 打开新窗口预览
 
   return (

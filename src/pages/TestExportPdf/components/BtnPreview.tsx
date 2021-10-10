@@ -9,9 +9,9 @@ const BtnPreviewStyle = styled.div`
   }
 `;
 
-export default function BtnPreview({ pdfInstance }: AllProps) {
+export default function BtnPreview({ pdf }: AllProps) {
   const handlePreviewCurrentPage = () => {
-    if (!pdfInstance) {
+    if (!pdf) {
       console.error("请传入pdf实例");
     }
 
@@ -21,14 +21,14 @@ export default function BtnPreview({ pdfInstance }: AllProps) {
       "position:absolute;right:0; top:0; bottom:0; height:100%; width:500px"
     );
     document.body.appendChild(iframe);
-    iframe.src = pdfInstance.output("datauristring");
+    iframe.src = pdf.output("datauristring");
   };
 
   const handlePreviewNewPage = () => {
-    if (!pdfInstance) {
+    if (!pdf) {
       console.error("请传入pdf实例");
     }
-    pdfInstance.output("dataurlnewwindow");
+    pdf.output("dataurlnewwindow");
   };
 
   return (

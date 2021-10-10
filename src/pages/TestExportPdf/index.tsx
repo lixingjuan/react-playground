@@ -93,7 +93,7 @@ const ExportPdfDemo = () => {
 
   return (
     <>
-      <BtnPreview pdfInstance={pdf} />
+      <BtnPreview pdf={pdf} />
 
       <div>
         {data.map(({ title, CompElement }) => (
@@ -109,7 +109,7 @@ const ExportPdfDemo = () => {
               </>
             }
           >
-            <CompElement pdfInstance={pdf} />
+            <CompElement pdf={pdf} />
           </Card>
         ))}
       </div>
