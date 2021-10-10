@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router";
 import styled from "styled-components";
@@ -20,16 +21,18 @@ function App() {
       <AppMenu routes={routes} />
 
       <div className="content">
-        <Switch>
-          {routes.map((it) => (
-            <Route
-              exact
-              key={it.path}
-              path={it.path}
-              component={it.component}
-            />
-          ))}
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            {routes.map((it) => (
+              <Route
+                exact
+                key={it.path}
+                path={it.path}
+                component={it.component}
+              />
+            ))}
+          </Switch>
+        </Suspense>
       </div>
     </AppStyled>
   );

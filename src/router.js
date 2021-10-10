@@ -1,19 +1,25 @@
-import Home from "./pages/Home/index";
-import TestAHooks from "./pages/TestAHooks";
-import TestKey from "./pages/TestKey";
-import TestExportPdf from "./pages/TestExportPdf";
-import TestExportWord from "./pages/TestExportWord";
-import TestAntd from "./pages/TestAntd";
-import TestCanvas from "./pages/TestCanvas";
-import TestSWR from "./pages/TestSWR";
-import TestResizable from "./pages/TestResizable/index";
-import TestFlexTable from "./pages/TestFlexTable";
-import TestScrollTable from "./pages/TestScrollTable/index";
-import TestReducerAndContext from "./pages/TestReducerAndContext/index";
-import TestCallChildMethod from "./pages/TestCallChildMethod/index";
-import TestDateRange from "./pages/TestDateRange/index";
-import TestTabs from "./pages/TestTabs/index";
-import TestZIndex from "./pages/TestZIndex/index";
+import React, { lazy } from "react";
+
+const Home = lazy(() => import("./pages/Home/index"));
+const TestAHooks = lazy(() => import("./pages/TestAHooks"));
+const TestKey = lazy(() => import("./pages/TestKey"));
+const TestExportPdf = lazy(() => import("./pages/TestExportPdf"));
+const TestExportWord = lazy(() => import("./pages/TestExportWord"));
+const TestAntd = lazy(() => import("./pages/TestAntd"));
+const TestCanvas = lazy(() => import("./pages/TestCanvas"));
+const TestSWR = lazy(() => import("./pages/TestSWR"));
+const TestResizable = lazy(() => import("./pages/TestResizable/index"));
+const TestFlexTable = lazy(() => import("./pages/TestFlexTable"));
+const TestScrollTable = lazy(() => import("./pages/TestScrollTable/index"));
+const TestReducerAndContext = lazy(() =>
+  import("./pages/TestReducerAndContext/index")
+);
+const TestCallChildMethod = lazy(() =>
+  import("./pages/TestCallChildMethod/index")
+);
+const TestDateRange = lazy(() => import("./pages/TestDateRange/index"));
+const TestTabs = lazy(() => import("./pages/TestTabs/index"));
+const TestZIndex = lazy(() => import("./pages/TestZIndex/index"));
 
 const baseUrl = "react-playground";
 
