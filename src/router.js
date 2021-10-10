@@ -2,6 +2,7 @@ import Home from "./pages/Home/index";
 import TestAHooks from "./pages/TestAHooks";
 import TestKey from "./pages/TestKey";
 import TestExportPdf from "./pages/TestExportPdf";
+import TestExportWord from "./pages/TestExportWord";
 import TestAntd from "./pages/TestAntd";
 import TestCanvas from "./pages/TestCanvas";
 import TestSWR from "./pages/TestSWR";
@@ -31,6 +32,11 @@ const routes = [
     path: "/TestExportPdf",
     desc: "测试TestExportPdf",
     component: TestExportPdf,
+  },
+  {
+    path: "/TestExportWord",
+    desc: "测试TestExportWord",
+    component: TestExportWord,
   },
   {
     path: "/TestAntd",

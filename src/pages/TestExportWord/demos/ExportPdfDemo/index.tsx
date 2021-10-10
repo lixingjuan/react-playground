@@ -6,12 +6,12 @@ import { HeartTwoTone } from "@ant-design/icons";
 
 import TestDom from "./TestDom";
 import BtnPreview from "./BtnPreview";
-import BtnAddTable from "./BtnAddTable";
+import DemoAddTable from "./DemoAddTable";
 
 const data = [
   {
-    title: BtnAddTable,
-    CompElement: BtnAddTable,
+    title: "DemoAddTable",
+    CompElement: DemoAddTable,
   },
 ];
 
@@ -92,6 +92,7 @@ const ExportPdfDemo = () => {
             style={{
               borderColor: "#7fcbfa",
             }}
+            key={title}
             title={
               <>
                 <HeartTwoTone twoToneColor="#eb2f96" />
