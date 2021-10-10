@@ -16,12 +16,14 @@ const Demo: React.FC<AllProps> = ({ pdf }: AllProps) => {
   const [iframeSrc, setIframeSrc] = useState("");
 
   useEffect(() => {
+    console.log("pdf change");
     setIframeSrc(pdf.output("datauristring"));
   }, [pdf]);
 
   return (
     <DemoStyle>
-      <iframe src={iframeSrc} title="preview" style={{}} />
+      {/* iframeSrc{{ iframeSrc }} */}
+      <iframe src={iframeSrc} title="preview" />
     </DemoStyle>
   );
 };

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Select } from "antd";
 import { AllProps } from "../type";
 // @ts-ignore
-import CodeMirror from "react-codemirror";
 
 const { Option } = Select;
 
@@ -22,7 +21,7 @@ const DemoStyle = styled.header`
 `;
 
 const Demo: React.FC<AllProps> = (props: AllProps) => {
-  const { pdf } = props;
+  // const { pdf } = props;
 
   return (
     <DemoStyle>

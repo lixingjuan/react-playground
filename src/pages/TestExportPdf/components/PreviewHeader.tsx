@@ -34,7 +34,7 @@ const DemoStyle = styled.div`
 `;
 
 const Demo: React.FC<DemoProps> = (props: DemoProps) => {
-  const { contentText } = props;
+  // const { contentText } = props;
 
   return (
     <DemoStyle>

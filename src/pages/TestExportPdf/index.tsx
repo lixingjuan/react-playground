@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { jsPDF as JsPDF } from "jspdf";
 import styled from "styled-components";
 
-import Code from "./components/Code";
+import CodeEditor from "./components/CodeEditor";
 import Preview from "./components/Preview";
 import CodeHeader from "./components/CodeHeader";
 import PreviewHeader from "./components/PreviewHeader";
-import DemoAddTable from "./components/DemoAddTable";
+// import DemoAddTable from "./components/DemoAddTable";
 
 const IndexStyle = styled.div`
   display: grid;
@@ -26,28 +26,30 @@ const IndexStyle = styled.div`
   }
 `;
 
-const data = [
-  {
-    title: "测试table",
-    CompElement: DemoAddTable,
-  },
-  // {
-  //   title: "测试highchart(图片)",
-  //   CompElement: DemoChart,
-  // },
-];
+// const data = [
+//   {
+//     title: "测试table",
+//     CompElement: DemoAddTable,
+//   },
+// {
+//   title: "测试highchart(图片)",
+//   CompElement: DemoChart,
+// },
+// ];
 
-var pdf = new JsPDF();
+const initPdf = new JsPDF();
 
 /**
  * @desc 自定义导出pdf
  */
 const ExportPdfDemo = () => {
+  const [pdf, setPdf] = useState(initPdf);
+
   return (
     <IndexStyle>
       <div className="left">
         <CodeHeader pdf={pdf} />
-        <Code pdf={pdf} />
+        <CodeEditor pdf={pdf} setPdf={setPdf} />
       </div>
 
       <div className="right">
