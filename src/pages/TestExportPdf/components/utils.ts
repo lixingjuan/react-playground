@@ -5,8 +5,24 @@ import HTMLtoDOCX from "html-to-docx/dist/html-to-docx.esm.js";
 /* @ts-ignore */
 import { saveAs } from "file-saver";
 import { jsPDF } from "jspdf";
+import domtoimage from "dom-to-image";
 
 const canvg = tempCanvg;
+
+/**
+ * @desc 获取图片dataURL
+ */
+export const handleGenerateDataUrl = (domSelector = "body"): any => {
+  const realDomSelector =
+    typeof domSelector === "string" ? domSelector : "body";
+
+  const node = document.querySelector(realDomSelector);
+
+  return domtoimage
+    .toPng(node as Node)
+    .then((dataUrl: string) => dataUrl)
+    .catch((error: Error) => error);
+};
 
 /**
  * @desc 传入svg字符串

@@ -38,6 +38,14 @@ export default function BtnPreview({ pdf }: AllProps) {
       <Button type="primary" onClick={handlePreviewCurrentPage}>
         当前页面预览
       </Button>
+
+      <Button
+        type="primary"
+        style={{ marginLeft: "20px" }}
+        onClick={() => pdf.save("lixingjuan.pdf")}
+      >
+        保存pdf
+      </Button>
     </BtnPreviewStyle>
   );
 }

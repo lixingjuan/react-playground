@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import autoTable from "jspdf-autotable";
 
 import TestDomTable from "./TestDomTable";
-import TestCodeMirror from "./TestCodeMirror";
+import CodeMirror from "./CodeMirror";
 import { pdfNewPagePreview, AllProps } from "./utils";
 
 export default function BtnPreview({ pdf }: AllProps) {
@@ -10,7 +10,8 @@ export default function BtnPreview({ pdf }: AllProps) {
 
   useEffect(() => {
     async function handleAddTable(preview = false) {
-      pdf.text("1. 调用pdf.table方法添加的table", 20, 40);
+      // pdf.text("1. 调用pdf.table方法添加的table", 20, 40);
+      pdf.text("1. pdf.table", 20, 40);
       pdf.table(
         10,
         10,
@@ -29,10 +30,16 @@ export default function BtnPreview({ pdf }: AllProps) {
         }
       );
 
-      pdf.text("2. 使用autoTable方法, 添加的页面上的table", 20, 40);
+      pdf.addPage();
+
+      // 3. 获取原液原有table
+      // pdf.text("2. 使用autoTable方法, 添加的页面上的table", 20, 200);
+      pdf.text("2. autoTable", 20, 200);
       autoTable(pdf, { html: "table" });
 
-      pdf.text("3. 使用autoTable方法, 自定义数据源添加的table", 20, 40);
+      // 3. 自定义数据源, 创建table
+      // pdf.text("3. 使用autoTable方法, 自定义数据源添加的table", 20, 300);
+      pdf.text("3. autoTable datasource", 20, 300);
       autoTable(pdf, {
         head: [["Name", "Email", "Country"]],
         body: [
@@ -70,13 +77,8 @@ export default function BtnPreview({ pdf }: AllProps) {
         },
       });
 
-      // pdf.setLineWidth(0.1);
-      // pdf.line(0, 0, 20, 20);
-
       if (preview) {
         pdfNewPagePreview(pdf);
-      } else {
-        // pdf.save("lixingjuan.pdf");
       }
     }
     handleAddTable();
@@ -87,7 +89,7 @@ export default function BtnPreview({ pdf }: AllProps) {
   return (
     <>
       <TestDomTable id="#my-table" />
-      {!!code && <TestCodeMirror code={code} />}
+      {!!code && <CodeMirror code={code} />}
     </>
   );
 }

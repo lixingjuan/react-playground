@@ -3,71 +3,33 @@ import { Button, Row, Card } from "antd";
 import { jsPDF as JsPDF } from "jspdf";
 import domtoimage from "dom-to-image";
 import { HeartTwoTone } from "@ant-design/icons";
+import styled from "styled-components";
 
-import TestDom from "./components/TestDom";
 import BtnPreview from "./components/BtnPreview";
 import DemoAddTable from "./components/DemoAddTable";
 import DemoChart from "./components/DemoChart";
 
+const IndexStyle = styled.div`
+  .card {
+    margin-top: 20px;
+  }
+  .card-wrapper {
+    width: 50%;
+  }
+`;
+
 const data = [
   {
-    title: "DemoAddTable",
+    title: "测试table",
     CompElement: DemoAddTable,
   },
-  {
-    title: "DemoChart",
-    CompElement: DemoChart,
-  },
+  // {
+  //   title: "测试highchart(图片)",
+  //   CompElement: DemoChart,
+  // },
 ];
 
 var pdf = new JsPDF();
-
-/**
- * @desc 我应该有自己的状态
- * 支持添加dom
- * @param {string} selector
- */
-// const useExportPdf = (): [
-//   string,
-//   {
-//     addHtml: (val: string) => void;
-//     savePdf: () => void;
-//   }
-// ] => {
-//   //
-//   const [stack, setStack] = useState("");
-
-//   /**
-//    * @desc 该方法用于向stack添加dom
-//    * @param {string} selector
-//    */
-//   const addHtml = (selector: string) => {
-//     const tempDom = document.querySelector(selector)?.outerHTML;
-//     setStack((pre) => `${pre}${tempDom}`);
-//   };
-
-//   /**
-//    * @desc 该方法用于下载
-//    */
-//   const savePdf = () => {};
-
-//   return [stack, { addHtml, savePdf }];
-// };
-
-/**
- * @desc 获取图片dataURL
- */
-const handleGenerateDataUrl = (domSelector = "body"): any => {
-  const realDomSelector =
-    typeof domSelector === "string" ? domSelector : "body";
-
-  const node = document.querySelector(realDomSelector);
-
-  return domtoimage
-    .toPng(node as Node)
-    .then((dataUrl: string) => dataUrl)
-    .catch((error: Error) => error);
-};
 
 const pdfObj = new JsPDF();
 
@@ -75,11 +37,6 @@ const pdfObj = new JsPDF();
  * @desc 自定义导出pdf
  */
 const ExportPdfDemo = () => {
-  const handleAddImage = async () => {
-    const dataURL = await handleGenerateDataUrl("#pdf-demo-dom");
-    pdfObj.addImage(dataURL, "JPEG", 20, 20, 180, 140);
-  };
-
   const handleAddPage = () => {
     pdfObj.addPage();
   };
@@ -92,16 +49,17 @@ const ExportPdfDemo = () => {
   };
 
   return (
-    <>
+    <IndexStyle>
       <BtnPreview pdf={pdf} />
 
-      <div>
+      <>
         {data.map(({ title, CompElement }) => (
           <Card
             style={{
               borderColor: "#7fcbfa",
             }}
             key={title}
+            className="card"
             title={
               <>
                 <HeartTwoTone twoToneColor="#eb2f96" />
@@ -112,19 +70,11 @@ const ExportPdfDemo = () => {
             <CompElement pdf={pdf} />
           </Card>
         ))}
-      </div>
+      </>
 
       <hr style={{ marginTop: "3000px" }} />
 
       <Row>
-        <Button
-          type="primary"
-          style={{ marginLeft: "20px" }}
-          onClick={handleAddImage}
-        >
-          将下图chart加入pdf
-        </Button>
-
         <Button
           type="primary"
           style={{ marginLeft: "20px" }}
@@ -140,18 +90,8 @@ const ExportPdfDemo = () => {
         >
           添加数字 222, 红色, 888, 绿色
         </Button>
-
-        <Button
-          type="primary"
-          style={{ marginLeft: "20px" }}
-          onClick={() => pdfObj.save("lixingjuan.pdf")}
-        >
-          保存pdf
-        </Button>
       </Row>
-
-      <TestDom />
-    </>
+    </IndexStyle>
   );
 };
 
