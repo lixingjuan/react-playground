@@ -21,7 +21,7 @@ const TestDateRange = lazy(() => import("./pages/TestDateRange/index"));
 const TestTabs = lazy(() => import("./pages/TestTabs/index"));
 const TestZIndex = lazy(() => import("./pages/TestZIndex/index"));
 
-const baseUrl = "react-playground";
+// const baseUrl = "react-playground";
 
 const routes = [
   {
@@ -106,7 +106,8 @@ const routes = [
   },
 ];
 
-export default routes.map((it) => ({
-  ...it,
-  path: `/${baseUrl}${it.path}`,
-}));
+export default routes;
+// .map((it) => ({
+//   ...it,
+//   path: `/${baseUrl}${it.path}`,
+// }));
