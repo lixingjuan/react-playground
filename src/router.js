@@ -126,7 +126,3 @@ const routes = [
 ];
 
 export default routes;
-// .map((it) => ({
-//   ...it,
-//   path: `/${baseUrl}${it.path}`,
-// }));
