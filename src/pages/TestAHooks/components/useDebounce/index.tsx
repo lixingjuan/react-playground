@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { useDebounce } from "ahooks";
+// import { useDebounce } from "ahooks";
+import useDebounce from "./code";
 
 export default function Demo() {
-  const [value, setValue] = useState<string>();
-  const debouncedValue = useDebounce(value, { wait: 1000, leading: true });
+  const [value, setValue] = useState<string>("");
+
+  // 被防抖过的值
+  const debouncedValue = useDebounce<string>(value, {
+    wait: 1000,
+    leading: true,
+  });
 
   return (
     <div>
