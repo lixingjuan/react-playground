@@ -2,6 +2,7 @@ import { Card } from "antd";
 import usePersistFn from "./components/usePersistFn";
 import useCreation from "./components/useCreation";
 import useDebounce from "./components/useDebounce";
+import useDebounceFn from "./components/useDebounceFn";
 import useRequest from "./components/useRequest";
 import useDrag from "./components/useDrag";
 import useToggle from "./components/useToggle";
@@ -19,6 +20,10 @@ const data = [
   {
     title: "useCreation",
     CompElement: useCreation,
+  },
+  {
+    title: "useDebounceFn",
+    CompElement: useDebounceFn,
   },
   {
     title: "useDebounce",

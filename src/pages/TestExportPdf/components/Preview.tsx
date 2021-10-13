@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AllProps } from "../type.d";
+import "../test-font-normal";
 
 const DemoStyle = styled.div`
   width: 100%;

@@ -1,4 +1,6 @@
-export const initCode = `// pdf.text("1. 调用pdf.table方法添加的table", 20, 40);
+export const initCode = `//
+      pdf.text("1. 调用pdf.table方法添加的table", 20, 40);
+
       pdf.text("1. pdf.table", 20, 40);
       pdf.table(
         10,
@@ -64,4 +66,11 @@ export const initCode = `// pdf.text("1. 调用pdf.table方法添加的table", 2
         headStyles: {
           fillColor: "red",
         },
-      });`;
+      });
+
+      pdf.setFont('SourceHanSansCN-Normal-normal', 'normal');
+      pdf.text("ǒ", 10,10,50,50);
+
+      pdf.setFont('SourceHanSansCN-Normal-normal', 'normal');
+      pdf.text("中文", 100,100,20,20);
+`;

@@ -7,6 +7,8 @@ import Preview from "./components/Preview";
 import CodeHeader from "./components/CodeHeader";
 import PreviewHeader from "./components/PreviewHeader";
 // import DemoAddTable from "./components/DemoAddTable";
+import "./test-font-normal.js";
+import "./test-font-chinese-normal";
 
 const IndexStyle = styled.div`
   display: grid;
