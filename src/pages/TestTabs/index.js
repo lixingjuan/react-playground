@@ -1,5 +1,6 @@
 import { Tabs, Card } from "antd";
 import TestRender from "./components/TestRender";
+import ExtraButton from "./components/ExtraButton";
 
 const { TabPane } = Tabs;
 
@@ -11,10 +12,22 @@ const arr = Array.from({ length: 20 }).map((it, index) => ({
   tab: `tab${index}`,
 }));
 
+const tempArr = [
+  {
+    name: "1",
+    comp: () => <div>1</div>,
+  },
+];
 const TestTabsPage = () => {
   return (
     <div>
-      <Tabs defaultActiveKey="1" onChange={callback}>
+      <ExtraButton />
+
+      <Tabs
+        defaultActiveKey="1"
+        onChange={callback}
+        tabBarExtraContent={<div>hello </div>}
+      >
         {arr.map((it) => (
           <TabPane tab={it.tab} key={it.tab}>
             {it.tab} content

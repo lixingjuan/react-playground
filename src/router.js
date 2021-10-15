@@ -4,6 +4,7 @@ const Home = lazy(() => import("./pages/Home/index"));
 const TestAHooks = lazy(() => import("./pages/TestAHooks"));
 const TestKey = lazy(() => import("./pages/TestKey"));
 const TestExportPdf = lazy(() => import("./pages/TestExportPdf"));
+const TestHistoryMethods = lazy(() => import("./pages/TestHistoryMethods"));
 const TestExportWord = lazy(() => import("./pages/TestExportWord"));
 const TestAntd = lazy(() => import("./pages/TestAntd"));
 const TestCanvas = lazy(() => import("./pages/TestCanvas"));
@@ -19,6 +20,7 @@ const TestCallChildMethod = lazy(() =>
 );
 const TestDateRange = lazy(() => import("./pages/TestDateRange/index"));
 const TestTabs = lazy(() => import("./pages/TestTabs/index"));
+const TestForm = lazy(() => import("./pages/TestForm/index"));
 const TestZIndex = lazy(() => import("./pages/TestZIndex/index"));
 
 // const baseUrl = "react-playground";
@@ -40,6 +42,11 @@ const routes = [
     component: TestExportPdf,
   },
   {
+    path: "/TestHistoryMethods",
+    desc: "测试TestHistoryMethods",
+    component: TestHistoryMethods,
+  },
+  {
     path: "/TestExportWord",
     desc: "测试TestExportWord",
     component: TestExportWord,
@@ -48,6 +55,11 @@ const routes = [
     path: "/TestAntd",
     desc: "测试TestAntd",
     component: TestAntd,
+  },
+  {
+    path: "/TestForm",
+    desc: "测试TestForm",
+    component: TestForm,
   },
   {
     path: "/TestCanvas",

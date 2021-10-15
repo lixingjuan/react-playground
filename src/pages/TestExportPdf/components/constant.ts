@@ -74,3 +74,158 @@ export const initCode = `//
       pdf.setFont('SourceHanSansCN-Normal-normal', 'normal');
       pdf.text("中文", 100,100,20,20);
 `;
+
+// 测试设计稿table
+export const initTableCode = `
+ autoTable(pdf, {
+  theme: "plain",
+  headStyles: {
+    fillColor: "#f6f6f6",
+    textColor: "#000",
+    cellWidth: "wrap",
+    fontSize: 8,
+  },
+  bodyStyles: {
+    textColor: "#000",
+    cellWidth: "wrap",
+    fontSize: 8,
+  },
+  head: [
+    [
+      {
+        content: "Forecast Value",
+        colSpan: 2,
+        styles: {
+          halign: "center",
+          valign: "middle",
+          fillColor: "#f6f6f6",
+        },
+      },
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "June",
+      "July",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+  ],
+  body: [
+    [
+      {
+        content: "2021",
+        rowSpan: 2,
+        styles: {
+          halign: "center",
+          valign: "middle",
+          cellWidth: "wrap",
+          fillColor: "#f6f6f6",
+        },
+      },
+      {
+        content: "Value",
+        styles: {
+          fillColor: "#f6f6f6",
+          halign: "center",
+          valign: "middle",
+          cellWidth: "wrap",
+        },
+      },
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+    ],
+    [
+      {
+        content: "%Change",
+        styles: {
+          halign: "center",
+          valign: "middle",
+          cellWidth: "wrap",
+          fillColor: "#f6f6f6",
+        },
+      },
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+    ],
+    [
+      {
+        content: "2022",
+        rowSpan: 2,
+        styles: {
+          halign: "center",
+          valign: "middle",
+          fillColor: "#f6f6f6",
+        },
+      },
+      {
+        content: "Value",
+        styles: {
+          halign: "center",
+          valign: "middle",
+          fillColor: "#f6f6f6",
+        },
+      },
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+      "5,228,31",
+    ],
+    [
+      {
+        content: "%Change",
+        styles: {
+          halign: "center",
+          valign: "middle",
+          fillColor: "#f6f6f6",
+        },
+      },
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+      "4.49%",
+    ],
+  ],
+});
+
+`;
