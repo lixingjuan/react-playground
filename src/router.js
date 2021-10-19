@@ -22,6 +22,8 @@ const TestDateRange = lazy(() => import("./pages/TestDateRange/index"));
 const TestTabs = lazy(() => import("./pages/TestTabs/index"));
 const TestForm = lazy(() => import("./pages/TestForm/index"));
 const TestZIndex = lazy(() => import("./pages/TestZIndex/index"));
+// 测试react 的api
+const TestReactApi = lazy(() => import("./pages/TestReactApi/index"));
 
 // const baseUrl = "react-playground";
 
@@ -55,6 +57,11 @@ const routes = [
     path: "/TestAntd",
     desc: "测试TestAntd",
     component: TestAntd,
+  },
+  {
+    path: "/TestReactApi",
+    desc: "测试TestReactApi",
+    component: TestReactApi,
   },
   {
     path: "/TestForm",

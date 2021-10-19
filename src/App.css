@@ -36,3 +36,9 @@
 * {
   text-align: left;
 }
+
+hr {
+  color: #777;
+  border-bottom-style: dashed;
+  border-top: 0px;
+}
