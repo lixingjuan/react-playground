@@ -5,7 +5,7 @@ import { jsPDF as JsPDF } from "jspdf";
 // @ts-ignore
 import CodeMirror from "react-codemirror";
 import { useDebounceEffect } from "ahooks";
-import { initCode, initTableCode } from "./constant";
+import { getInitCode, getInitTableCode } from "./constant";
 import autoTable from "jspdf-autotable";
 
 const CodeMirrorStyle = styled(CodeMirror)`
@@ -22,7 +22,7 @@ interface CodeProps extends AllProps {
 }
 
 const CodeEditor: React.FC<CodeProps> = ({ setPdf }: CodeProps) => {
-  const [code, setCode] = useState(initTableCode);
+  const [code, setCode] = useState(getInitCode());
 
   useDebounceEffect(
     () => {

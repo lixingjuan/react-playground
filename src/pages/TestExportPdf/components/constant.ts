@@ -1,4 +1,8 @@
-export const initCode = `//
+export const getInitCode = () => `
+      pdf.setTextColor("red");
+      pdf.setFontSize(16);
+      pdf.text("|", 10, 10);
+
       pdf.text("1. 调用pdf.table方法添加的table", 20, 40);
 
       pdf.text("1. pdf.table", 20, 40);
@@ -76,7 +80,7 @@ export const initCode = `//
 `;
 
 // 测试设计稿table
-export const initTableCode = `
+export const getInitTableCode = (bodyArr: any) => `
  autoTable(pdf, {
   theme: "plain",
   headStyles: {
@@ -115,7 +119,8 @@ export const initTableCode = `
       "Dec",
     ],
   ],
-  body: [
+  body: ${bodyArr},
+  bodys: [
     [
       {
         content: "2021",

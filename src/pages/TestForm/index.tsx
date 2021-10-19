@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, InputNumber, Input } from "antd";
+import { Form, Button, Input } from "antd";
 
 function validatePrimeNumber(number: any) {
   if (number > 10) {
@@ -25,29 +25,56 @@ const formItemLayout = {
 };
 
 const RawForm = () => {
-  const [number, setNumber] = useState<any>({
-    value: 11,
-    validateStatus: "error",
-    errorMsg: "The prime more than the 10!",
+  // const [number, setNumber] = useState<any>({
+  //   value: 11,
+  //   validateStatus: "error",
+  //   errorMsg: "The prime more than the 10!",
+  // });
+  const [error, setError] = useState<{
+    validateStatus:
+      | ""
+      | "success"
+      | "error"
+      | "warning"
+      | "validating"
+      | undefined;
+    errorMsg: string;
+  }>({
+    validateStatus: undefined,
+    errorMsg: "",
   });
-  const tips =
-    "A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself.";
 
-  const onNumberChange = (value: any) => {
-    setNumber({ ...validatePrimeNumber(value), value });
-  };
-
-  const onFieldsChange = (val: any) => {
+  const onValuesChange = (val: any) => {
     console.log({ val });
   };
 
   return (
-    <Form onFieldsChange={onFieldsChange}>
+    <Form onValuesChange={onValuesChange}>
+      <Button
+        onClick={() => {
+          setError({
+            validateStatus: "error",
+            errorMsg: "hello world",
+          });
+        }}
+      >
+        设置错误信息, hello world
+      </Button>
+      <Button
+        onClick={() => {
+          setError({
+            validateStatus: undefined,
+            errorMsg: "",
+          });
+        }}
+      >
+        清除错误信息
+      </Button>
       <Form.Item
         {...formItemLayout}
         label="Prime more than 10"
-        validateStatus={"error"}
-        help={"help help help"}
+        validateStatus={error.validateStatus}
+        help={error.errorMsg}
         rules={[
           { required: true, message: `Name can't be empty` },
           { max: 10, message: `At most 200 chars for name` },
