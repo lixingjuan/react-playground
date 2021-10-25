@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CodeMirror from "./CodeMirror";
 import HighChart from "../../../components/HighChartDemo";
 
-import { handleGenerateDataUrl, AllProps } from "./utils";
+import { handleGenerateDataUrl, AllProps } from "../utils";
 
 export default function DemoChart({ pdf }: AllProps) {
   const [code, setCode] = useState("");
@@ -28,11 +28,11 @@ export default function DemoChart({ pdf }: AllProps) {
 
     setCode(
       `
-// handleGenerateDataUrl函数
-${handleGenerateDataUrl}
+    // handleGenerateDataUrl函数
+    ${handleGenerateDataUrl}
 
-// 将图片添加到pdf实例
-${handleAddImage}`
+    // 将图片添加到pdf实例
+    ${handleAddImage}`
     );
   }, [pdf]);
 

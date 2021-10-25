@@ -19,14 +19,14 @@ const IndexStyle = styled.div`
 `;
 
 const data = [
-  {
-    title: "测试table",
-    CompElement: DemoAddTable,
-  },
   // {
-  //   title: "测试highchart(图片)",
-  //   CompElement: DemoChart,
+  //   title: "测试table",
+  //   CompElement: DemoAddTable,
   // },
+  {
+    title: "测试highchart(图片)",
+    CompElement: DemoChart,
+  },
 ];
 
 var pdf = new JsPDF();

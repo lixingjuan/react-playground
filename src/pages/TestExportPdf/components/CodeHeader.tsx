@@ -27,7 +27,7 @@ const Demo: React.FC<AllProps> = (props: AllProps) => {
     <DemoStyle>
       <label htmlFor="">Pick an example</label>
 
-      <Select
+      {/* <Select
         bordered={false}
         defaultValue="Table"
         style={{
@@ -38,7 +38,7 @@ const Demo: React.FC<AllProps> = (props: AllProps) => {
         }}
       >
         <Option value="Table">Table</Option>
-      </Select>
+      </Select> */}
     </DemoStyle>
   );
 };

@@ -234,3 +234,5 @@ export const getInitTableCode = (bodyArr: any) => `
 });
 
 `;
+
+// chart的初始代码

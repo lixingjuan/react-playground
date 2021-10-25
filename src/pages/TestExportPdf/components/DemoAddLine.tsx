@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import TestDomTable from "./TestDomTable";
 import CodeMirror from "./CodeMirror";
-import { AllProps } from "./utils";
+import { AllProps } from "../utils";
 
 export default function BtnPreview({ pdf }: AllProps) {
   const [code, setCode] = useState<string>("");

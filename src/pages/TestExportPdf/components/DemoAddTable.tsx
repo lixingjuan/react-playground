@@ -3,7 +3,7 @@ import autoTable from "jspdf-autotable";
 
 import TestDomTable from "./TestDomTable";
 import CodeMirror from "./CodeMirror";
-import { pdfNewPagePreview, AllProps } from "./utils";
+import { pdfNewPagePreview, AllProps } from "../utils";
 
 export default function BtnPreview({ pdf }: AllProps) {
   const [code, setCode] = useState<string>("");

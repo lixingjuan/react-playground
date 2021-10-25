@@ -12,11 +12,12 @@ const canvg = tempCanvg;
 /**
  * @desc 获取图片dataURL
  */
-export const handleGenerateDataUrl = (domSelector = "body"): any => {
-  const realDomSelector =
-    typeof domSelector === "string" ? domSelector : "body";
+export const handleGenerateDataUrl = (domSelector: string): Promise<any> => {
+  const node = document.querySelector(domSelector);
 
-  const node = document.querySelector(realDomSelector);
+  if (!node) {
+    return Promise.resolve("");
+  }
 
   return domtoimage
     .toPng(node as Node)

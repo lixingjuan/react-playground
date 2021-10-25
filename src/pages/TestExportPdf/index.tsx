@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { jsPDF as JsPDF } from "jspdf";
 import styled from "styled-components";
+import { Button } from "antd";
 
 import CodeEditor from "./components/CodeEditor";
 import Preview from "./components/Preview";
 import CodeHeader from "./components/CodeHeader";
 import PreviewHeader from "./components/PreviewHeader";
+import HighChartDemo from "../../components/HighChartDemo";
+import ChartAndCode from "./components/ChartAndCode/index";
+
 // import DemoAddTable from "./components/DemoAddTable";
 import "./test-font-normal.js";
 import "./test-font-chinese-normal";
+import { handleGenerateDataUrl } from "./utils";
 
 const IndexStyle = styled.div`
   display: grid;
@@ -28,17 +33,6 @@ const IndexStyle = styled.div`
   }
 `;
 
-// const data = [
-//   {
-//     title: "测试table",
-//     CompElement: DemoAddTable,
-//   },
-// {
-//   title: "测试highchart(图片)",
-//   CompElement: DemoChart,
-// },
-// ];
-
 const initPdf = new JsPDF();
 
 /**
@@ -46,19 +40,43 @@ const initPdf = new JsPDF();
  */
 const ExportPdfDemo = () => {
   const [pdf, setPdf] = useState(initPdf);
+  const [demoType, setDemoType] = useState("table");
+
+  const handleExportChart = async () => {
+    const pdfObj = new JsPDF();
+    const dataURL = await handleGenerateDataUrl("#pdf-demo-dom");
+
+    const imgEle = document.createElement("img");
+    imgEle.src = dataURL;
+    debugger;
+
+    pdfObj.addImage({
+      imageData: imgEle,
+      x: 100,
+      y: 100,
+      width: 200,
+      height: 300,
+    });
+
+    setPdf(pdfObj);
+  };
 
   return (
-    <IndexStyle>
-      <div className="left">
-        <CodeHeader pdf={pdf} />
-        <CodeEditor pdf={pdf} setPdf={setPdf} />
-      </div>
+    <>
+      <ChartAndCode />
+      <IndexStyle>
+        <div className="left">
+          {/* todo: 如果用户选择了不用的类型，修改不同的初始化code */}
+          <CodeHeader pdf={pdf} />
+          <CodeEditor pdf={pdf} setPdf={setPdf} />
+        </div>
 
-      <div className="right">
-        <PreviewHeader />
-        <Preview pdf={pdf} />
-      </div>
-    </IndexStyle>
+        <div className="right">
+          <PreviewHeader />
+          <Preview pdf={pdf} />
+        </div>
+      </IndexStyle>
+    </>
   );
 };
 

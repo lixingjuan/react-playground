@@ -8,7 +8,7 @@ import { useDebounceEffect } from "ahooks";
 import { getInitCode, getInitTableCode } from "./constant";
 import autoTable from "jspdf-autotable";
 
-const CodeMirrorStyle = styled(CodeMirror)`
+const StyledCodeMirror = styled(CodeMirror)`
   height: 100%;
   min-height: 100%;
 `;
@@ -46,7 +46,7 @@ const CodeEditor: React.FC<CodeProps> = ({ setPdf }: CodeProps) => {
     }
   );
 
-  return <CodeMirrorStyle value={code} onChange={setCode} options={options} />;
+  return <StyledCodeMirror value={code} onChange={setCode} options={options} />;
 };
 
 export default CodeEditor;

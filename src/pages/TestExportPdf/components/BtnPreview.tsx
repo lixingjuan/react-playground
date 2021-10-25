@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { AllProps } from "./utils";
+import { AllProps } from "../utils";
 import styled from "styled-components";
 
 const BtnPreviewStyle = styled.div`
