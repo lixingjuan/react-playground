@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-playground"]=this["webpackJsonpreact-playground"]||[]).push([[22],{678:function(c,s,e){},758:function(c,s,e){"use strict";e.r(s);e(678);var a=e(10);s.default=function(){return Object(a.jsx)("div",{children:Object(a.jsxs)("ul",{className:"list",children:[Object(a.jsx)("li",{className:"a",children:"\u7b2c\u4e00\u4e2a"}),Object(a.jsx)("li",{className:"b",children:"\u7b2c\u4e8c\u4e2a"}),Object(a.jsx)("li",{className:"c",children:"\u7b2c\u4e09\u4e2a"})]})})}}}]);
+//# sourceMappingURL=22.e9705a54.chunk.js.map
