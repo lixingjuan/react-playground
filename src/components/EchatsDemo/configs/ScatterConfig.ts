@@ -1,0 +1,160 @@
+import { EChartsOption } from "echarts/index";
+
+const config: EChartsOption = {
+  tooltip: { position: "top" },
+  grid: { top: 50, left: 110, right: 90, bottom: 50, containLabel: true },
+  xAxis: {
+    axisLine: {
+      symbol: ["none", "arrow"],
+      symbolSize: [8, 12],
+      symbolOffset: [10, 10],
+      onZero: false,
+    },
+    offset: -340,
+    nameTextStyle: { fontSize: 14 },
+    name: "行业景气度",
+  },
+  yAxis: {
+    name: "行业相对PE历史百分位",
+    interval: 0.1,
+  },
+  series: {
+    type: "scatter",
+    symbolSize: 50,
+    data: [
+      {
+        id: "01030309",
+        name: "机械设备",
+        value: [-0.7285, 0.2453],
+        itemStyle: {
+          color: {
+            colorStops: [
+              { offset: 0, color: "rgba(209,227,255,0.3)" },
+              { offset: 0.95, color: "rgba(121,157,255,0.7)" },
+              { offset: 1, color: "rgba(121,157,255,1.0)" },
+            ],
+            x: 0.5,
+            y: 0.5,
+            r: 1,
+            type: "radial",
+            global: false,
+          },
+        },
+      },
+      {
+        id: "01030322",
+        name: "非银金融",
+        value: [-0.9192, 0.1572],
+        itemStyle: {},
+      },
+      { id: "01030321", name: "银行", value: [0.5398, 0.1017], itemStyle: {} },
+      {
+        id: "01030320",
+        name: "房地产",
+        value: [-1.8261, 0.0304],
+        itemStyle: {},
+      },
+      {
+        id: "01030308",
+        name: "电气设备",
+        value: [-0.368, 0.9963],
+        itemStyle: {},
+      },
+      {
+        id: "01030307",
+        name: "建筑装饰",
+        value: [0.05, 0.1368],
+        itemStyle: {},
+      },
+      {
+        id: "01030306",
+        name: "建筑材料",
+        value: [-0.5415, 0.2411],
+        itemStyle: {},
+      },
+      { id: "01030327", name: "通信", value: [1.7912, 0.01], itemStyle: {} },
+      {
+        id: "01030305",
+        name: "有色金属",
+        value: [0.7327, 0.1257],
+        itemStyle: {},
+      },
+      { id: "01030326", name: "传媒", value: [1.0356, 0.0839], itemStyle: {} },
+      { id: "01030304", name: "钢铁", value: [1.4229, 0.1166], itemStyle: {} },
+      { id: "01030325", name: "计算机", value: [0.073, 0.4885], itemStyle: {} },
+      { id: "01030303", name: "化工", value: [1.8177, 0.5455], itemStyle: {} },
+      {
+        id: "01030324",
+        name: "休闲服务",
+        value: [0.3232, 0.5324],
+        itemStyle: {},
+      },
+      { id: "01030302", name: "采掘", value: [1.8184, 0.0137], itemStyle: {} },
+      {
+        id: "01030323",
+        name: "商业贸易",
+        value: [-0.7703, 0.2785],
+        itemStyle: {},
+      },
+      {
+        id: "01030301",
+        name: "农林牧渔",
+        value: [-1.5885, 0.6085],
+        itemStyle: {},
+      },
+      { id: "01030311", name: "汽车", value: [-0.6801, 0.9638], itemStyle: {} },
+      {
+        id: "01030310",
+        name: "国防军工",
+        value: [-0.4056, 0.4984],
+        itemStyle: {},
+      },
+      {
+        id: "01030319",
+        name: "交通运输",
+        value: [0.9601, 0.0487],
+        itemStyle: {},
+      },
+      {
+        id: "01030318",
+        name: "公用事业",
+        value: [0.8608, 0.5443],
+        itemStyle: {},
+      },
+      {
+        id: "01030317",
+        name: "医药生物",
+        value: [0.3229, 0.3711],
+        itemStyle: {},
+      },
+      {
+        id: "01030316",
+        name: "轻工制造",
+        value: [0.8283, 0.0916],
+        itemStyle: {},
+      },
+      {
+        id: "01030315",
+        name: "纺织服装",
+        value: [0.9378, 0.3431],
+        itemStyle: {},
+      },
+      {
+        id: "01030314",
+        name: "食品饮料",
+        value: [-1.0713, 0.9607],
+        itemStyle: {},
+      },
+      {
+        id: "01030313",
+        name: "家用电器",
+        value: [-0.1393, 0.5543],
+        itemStyle: {},
+      },
+      { id: "01030312", name: "电子", value: [-0.1402, 0.2524], itemStyle: {} },
+    ],
+    label: { show: true, formatter: "{b}", color: "#304272" },
+    tooltip: {},
+  },
+};
+export default config;

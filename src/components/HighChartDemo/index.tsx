@@ -7,8 +7,8 @@ import Highcharts from "highcharts/highstock";
 import ReactHighchartsFromModule from "react-highcharts";
 
 import "./index.css";
-import options from "./config.json";
-import options2 from "./config2.json";
+import demoConfig from "./configs/demo.json";
+import other from "./configs/other";
 
 export const ReactHighchartsWidget =
   ReactHighchartsFromModule.withHighcharts(Highcharts);
@@ -19,17 +19,16 @@ interface HighChartDemoProps {
 
 const HighChartDemo = (props: HighChartDemoProps) => {
   const { otherConfig } = props;
-  const theOptions = merge({}, options, otherConfig);
+  const theOptions = merge({}, demoConfig, otherConfig);
+  const otherOptions = other;
 
   return (
     <div>
-      {/* <ul className="legend">
-        {options.series.map((it) => (
-          <li key={it.name}>{it.name}</li>
-        ))}
-      </ul> */}
+      {/* <h1>defaut Config</h1> */}
+      {/* <HighchartsReact highcharts={Highcharts} options={theOptions} /> */}
 
-      <HighchartsReact highcharts={Highcharts} options={theOptions} />
+      <h1>Other Config</h1>
+      <HighchartsReact highcharts={Highcharts} options={otherOptions} />
 
       {/* <ReactHighchartsWidget
         config={theOptions}

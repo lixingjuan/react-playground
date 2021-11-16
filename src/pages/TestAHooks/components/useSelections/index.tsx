@@ -1,30 +1,35 @@
-import { Checkbox, Col, Row } from "antd";
+import { Checkbox, Button, Col, Row } from "antd";
 import React, { useMemo, useState } from "react";
 // import { useSelections } from "ahooks";
 import useSelections from "./code";
 
+const list = [{ name: "1" }, { name: "2" }, { name: "3" }];
+
 export default function TestUseSelections() {
   const [hideOdd, setHideOdd] = useState(false);
-
-  const list = useMemo(() => {
-    if (hideOdd) {
-      return [2, 4, 6, 8];
-    }
-    return [1, 2, 3, 4, 5, 6, 7, 8];
-  }, [hideOdd]);
+  const [allTreeKeys, setallTreeKeys] = useState([1, 2, 3, 4]);
+  const [defautCheckedKeys, setdefautCheckedKeys] = useState([1]);
 
   const {
     selected,
     allSelected,
+    partiallySelected,
     isSelected,
     toggle,
     toggleAll,
-    partiallySelected,
-  } = useSelections(list, [1]);
+  } = useSelections(allTreeKeys, defautCheckedKeys);
+
+  const handleClick = () => {
+    // setallTreeKeys([5, 6]);
+    setdefautCheckedKeys([5]);
+  };
 
   return (
     <div>
-      <div>初始化被选中的元素 selected : {selected.join(",")}</div>
+      <Button onClick={handleClick}>修改 alldata</Button>
+
+      <div>初始化被选中的元素 selected : {selected.map((it) => it)}</div>
+
       <div style={{ borderBottom: "1px solid #E9E9E9", padding: "10px 0" }}>
         <Checkbox
           checked={allSelected}
@@ -38,15 +43,9 @@ export default function TestUseSelections() {
         </Checkbox>
       </div>
 
-      <Row style={{ padding: "10px 0" }}>
-        {list.map((o) => (
-          <Col span={12} key={o}>
-            <Checkbox checked={isSelected(o)} onClick={() => toggle(o)}>
-              {o}
-            </Checkbox>
-          </Col>
-        ))}
-      </Row>
+      {allTreeKeys.map((it) => (
+        <li>{it}</li>
+      ))}
     </div>
   );
 }

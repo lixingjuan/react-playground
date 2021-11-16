@@ -5024,10 +5024,10 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-echarts@^5.2.1:
-  version "5.2.1"
-  resolved "http://f2e02.wmcloud-dev.com:4873/echarts/-/echarts-5.2.1.tgz#bd58ec011cd82def4a714e4038ef4b73b8417bc3"
-  integrity sha1-vVjsARzYLe9KcU5AOO9Lc7hBe8M=
+echarts@^5.2.2:
+  version "5.2.2"
+  resolved "http://f2e02.wmcloud-dev.com:4873/echarts/-/echarts-5.2.2.tgz#ec3c8b2a151cbba71ba3c2c7cf9b2f2047ce4370"
+  integrity sha1-7DyLKhUcu6cbo8LHz5svIEfOQ3A=
   dependencies:
     tslib "2.3.0"
     zrender "5.2.1"

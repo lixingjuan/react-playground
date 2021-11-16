@@ -14,6 +14,10 @@ import { HeartTwoTone } from "@ant-design/icons";
 
 const data = [
   {
+    title: "useSelections",
+    CompElement: useSelections,
+  },
+  {
     title: "usePersistFn",
     CompElement: usePersistFn,
   },
@@ -48,10 +52,6 @@ const data = [
   {
     title: "useCount",
     CompElement: useCount,
-  },
-  {
-    title: "useSelections",
-    CompElement: useSelections,
   },
 ];
 

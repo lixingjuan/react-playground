@@ -12,7 +12,7 @@ const MenuStyle = styled.div`
 function MenuComp(props) {
   const { routes } = props;
 
-  const [collapsed, { toggle: setCollapsed }] = useBoolean(true);
+  const [collapsed, { toggle: setCollapsed }] = useBoolean(false);
   const {
     location: { pathname },
   } = useHistory();
@@ -22,7 +22,7 @@ function MenuComp(props) {
 
   return (
     <MenuStyle>
-      <Button onClick={() => setCollapsed()}>collapsed</Button>
+      <Button onClick={setCollapsed}>collapsed</Button>
       collapsed{`${collapsed}`}
       <Menu
         mode={"inline"}
