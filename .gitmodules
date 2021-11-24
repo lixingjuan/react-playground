@@ -1,0 +1,3 @@
+[submodule "packages/antd"]
+	path = packages/antd
+	url = https://github.com/ant-design/ant-design.git
