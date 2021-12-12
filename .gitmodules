@@ -7,3 +7,6 @@
 [submodule "packages/react-use"]
 	path = packages/react-use
 	url = git@github.com:streamich/react-use.git
+[submodule "packages/react"]
+	path = packages/react
+	url = git@github.com:facebook/react.git
