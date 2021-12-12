@@ -1,6 +1,6 @@
-[submodule "hooks"]
-	path = packages/hooks
-	url = https://github.com/alibaba/hooks.git
 [submodule "packages/react-motion"]
 	path = packages/react-motion
 	url = git@github.com:chenglou/react-motion.git
+[submodule "packages/hooks"]
+	path = packages/hooks
+	url = git@github.com:alibaba/hooks.git
