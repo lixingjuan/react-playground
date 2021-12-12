@@ -4,3 +4,6 @@
 [submodule "packages/hooks"]
 	path = packages/hooks
 	url = git@github.com:alibaba/hooks.git
+[submodule "packages/react-use"]
+	path = packages/react-use
+	url = git@github.com:streamich/react-use.git
