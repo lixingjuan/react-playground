@@ -1,12 +1,16 @@
 import FancyInput from "./Input";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function TestFancyInput() {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleClick = () => {
-    inputRef.current.focus();
+    inputRef?.current?.focus();
   };
+
+  useEffect(() => {
+    console.log("father");
+  }, []);
 
   return (
     <div>

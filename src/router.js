@@ -16,7 +16,7 @@ const TestReducerAndContext = lazy(() =>
   import("./pages/TestReducerAndContext/index")
 );
 const TestCallChildMethod = lazy(() =>
-  import("./pages/TestCallChildMethod/index")
+  import("./pages/TestCallChildMethod")
 );
 const TestDateRange = lazy(() => import("./pages/TestDateRange/index"));
 const TestTabs = lazy(() => import("./pages/TestTabs/index"));
