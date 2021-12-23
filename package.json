@@ -28,6 +28,7 @@
     "jspdf-autotable": "^3.5.20",
     "lodash": "^4.17.21",
     "mockjs": "^1.1.0",
+    "pouchdb": "^7.2.2",
     "react": "^17.0.2",
     "react-codemirror": "^1.0.0",
     "react-dom": "^17.0.2",
@@ -69,8 +70,10 @@
   },
   "homepage": "/react-playground/",
   "devDependencies": {
+    "@types/chrome": "^0.0.171",
     "@types/lodash": "^4.14.175",
     "@types/mockjs": "^1.0.4",
+    "@types/pouchdb": "^6.4.0",
     "@types/react-resizable": "^1.7.3",
     "@types/react-router": "^5.1.16",
     "@types/styled-components": "^5.1.14"
