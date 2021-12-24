@@ -19,6 +19,7 @@ const IndexStyle = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 80vh;
+
   .left,
   .right {
     display: flex;
@@ -48,7 +49,6 @@ const ExportPdfDemo = () => {
 
     const imgEle = document.createElement("img");
     imgEle.src = dataURL;
-    debugger;
 
     pdfObj.addImage({
       imageData: imgEle,

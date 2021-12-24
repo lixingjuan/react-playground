@@ -1,63 +1,18 @@
-import { useState } from "react";
-import { DatePicker } from "antd";
-
-const { RangePicker } = DatePicker;
+import { useEffect, useState } from "react";
+import DateRangePicker from "./DateRangePicker";
+import NotExceed7Days from "./NotExceed7Days";
 
 const TestDateRange = () => {
-  /* 中间中转时间 */
-  const [tempDate, setTempDate] = useState();
-  /* 每次的选择 */
-  const [dates, setDates] = useState([]);
-  /* 最终真实值 */
-  const [realDate, setRealDate] = useState();
+  const [date, setDate] = useState([]);
 
-  /**
-   * @desc disabled 的时间范围
-   */
-  const disabledDate = (current) => {
-    if (!dates || dates.length === 0) {
-      return false;
-    }
-    const tooLate = dates[0] && current.diff(dates[0], "years") < 1;
-    const tooEarly = dates[1] && dates[1].diff(current, "years") < 1;
-    return tooEarly || tooLate;
-  };
-
-  /**
-   * @desc 打开关闭
-   */
-  const onOpenChange = (open) => {
-    if (open) {
-      setDates([]);
-      setRealDate([]);
-    } else {
-      setRealDate(undefined);
-    }
-  };
-
-  /**
-   * @desc 待选日期范围发生变化的回调
-   */
-  const onCalendarChange = (val) => {
-    console.log("触发", "onCalendarChange");
-    setDates(val);
-  };
-
-  const onChange = (val) => {
-    console.log("触发", "onChange");
-    setTempDate(val);
-  };
+  useEffect(() => {
+    console.log("date 更新", date);
+  }, [date]);
 
   return (
     <div>
-      <h1>时间范围必须大于一年</h1>
-      <RangePicker
-        value={realDate || tempDate}
-        onChange={onChange}
-        disabledDate={disabledDate}
-        onCalendarChange={onCalendarChange}
-        onOpenChange={onOpenChange}
-      />
+      {/* <DateRangePicker date={date} setDate={setDate} /> */}
+      <NotExceed7Days date={date} setDate={setDate} />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import HighChartDemo from "../../components/HighChartDemo";
 function HomePage() {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
+      <HighChartDemo></HighChartDemo>
       {/* <h1>HighChartDemo</h1>
       <HighChartDemo /> */}
 
