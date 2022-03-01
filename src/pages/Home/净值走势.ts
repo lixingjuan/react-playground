@@ -1,8 +1,12 @@
 import moment from "moment";
+import { EChartsOption } from "echarts";
+import round from "lodash/round";
 
 window.moment = moment;
 
-const option = {
+const option: EChartsOption = {
+  legend: {},
+  color: ["#5180FF", "#FF9749", "#1ABFB0"],
   xAxis: {
     type: "category",
     axisLabel: {
@@ -11,10 +15,46 @@ const option = {
   },
   yAxis: {
     type: "value",
-    trigger: "axis",
   },
   tooltip: {
-    show: true,
+    trigger: "axis",
+    position(pt) {
+      return [pt[0], "10%"];
+    },
+    appendToBody: true,
+    confine: true,
+    renderMode: "html",
+    // !! 该类名用于控制将tooltip 第一行的日期居中
+    className: "echarts-tooltip-first-line-date-center",
+    hideDelay: 0,
+    textStyle: {
+      fontSize: 12,
+    },
+    // formatter: '{b0}: {c0}<br />{b1}: {c1}',
+    formatter: (params) => {
+      if (!Array.isArray(params)) {
+        return "";
+      }
+
+      // /** @ts-ignore */
+      const [{ data = [], marker = "", seriesName }] = (params as any) || [
+        { data: [], marker: "", seriesName: "" },
+      ];
+      const [date, value] = data;
+      const realMaker = marker.replace(
+        "width:10px;height:10px;",
+        "width:6px;height:6px;"
+      );
+      return `
+        <div style="min-width: 100px">
+          <div style="width:100%; text-align:center; font-size:14px; color: #333; font-weight:400; margin-bottom:10px;">${date}</div>
+          <div style="width:100%; display:flex; justify-content:space-between; align-items:center;">
+            <span style="margin-right:20px;">${realMaker}${seriesName}</span>
+            <span>${round(value, 2)}%</span>
+          </div>
+        </div>
+      `;
+    },
   },
   series: [
     {
@@ -22,9 +62,6 @@ const option = {
       type: "line",
       smooth: 0.3,
       showSymbol: false,
-      tooltip: {
-        show: true,
-      },
       data: [
         [1614556800000, 1],
         [1614643200000, 0.9948255043750418],
@@ -222,13 +259,10 @@ const option = {
       ],
     },
     {
-      name: "申万采掘",
+      name: "分析基准",
       type: "line",
       smooth: 0.3,
       showSymbol: false,
-      tooltip: {
-        show: true,
-      },
       data: [
         [1614556800000, 2.4558409247122372],
         [1614643200000, 2.450516471920772],
@@ -426,13 +460,10 @@ const option = {
       ],
     },
     {
-      name: "申万农林牧渔",
+      name: "超额收益",
       type: "line",
       smooth: 0.3,
       showSymbol: false,
-      tooltip: {
-        show: true,
-      },
       data: [
         [1614556800000, 4.214886246423914],
         [1614643200000, 4.176313177510071],
