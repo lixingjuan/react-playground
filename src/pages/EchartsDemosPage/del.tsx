@@ -4,9 +4,8 @@ type GreetingProps = {
   name: string;
 };
 
-export const Greeting /* : React.FC<GreetingProps> */ = ({
-  name,
-}: GreetingProps) => {
+/* : React.FC<GreetingProps> */
+export const Greeting = ({ name }: GreetingProps) => {
   // name is string!
   return <h1>Hello {name}</h1>;
 };
