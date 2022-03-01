@@ -10,6 +10,9 @@ const markLine = {
     color: "#fa4b68",
     width: 2,
   },
+  label: {
+    show: false,
+  },
   data: [
     {
       xAxis: "2021-12-01",
@@ -618,6 +621,74 @@ const option: EChartsOption = {
     },
   },
   color: ["#5180FF", "#FF9749", "#1ABFB0"],
+  graphic: [
+    {
+      type: "group",
+      bounding: "raw",
+      right: 200,
+      bottom: 500,
+      children: [
+        {
+          type: "rect",
+          left: "center",
+          top: "center",
+          shape: {
+            width: 46,
+            height: 20,
+          },
+          style: {
+            fill: "rgba(241,240,240,0.80)",
+          },
+        },
+        {
+          type: "text",
+          left: "center",
+          top: "center",
+          shape: {
+            width: 46,
+            height: 20,
+          },
+          style: {
+            text: "样本内",
+            fill: "#333",
+          },
+        },
+      ],
+    },
+    {
+      type: "group",
+      bounding: "raw",
+      right: 100,
+      bottom: 500,
+      children: [
+        {
+          type: "rect",
+          left: "center",
+          top: "center",
+          shape: {
+            width: 46,
+            height: 20,
+          },
+          style: {
+            fill: "rgba(241,240,240,0.80)",
+          },
+        },
+        {
+          type: "text",
+          left: "center",
+          top: "center",
+          shape: {
+            width: 46,
+            height: 20,
+          },
+          style: {
+            text: "样本外",
+            fill: "#333",
+          },
+        },
+      ],
+    },
+  ],
   xAxis: {
     type: "time",
     axisLabel: {
@@ -630,6 +701,11 @@ const option: EChartsOption = {
     axisLabel: {
       hideOverlap: true,
       formatter: "{value}%",
+    },
+    splitLine: {
+      lineStyle: {
+        type: "dashed",
+      },
     },
   },
   tooltip: {
@@ -713,7 +789,6 @@ const option: EChartsOption = {
       showSymbol: false,
       symbol: "roundRect",
       data: forSeriesItem(data3),
-      markLine,
     },
   ],
 };

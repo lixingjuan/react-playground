@@ -22,12 +22,8 @@ const TestDateRange = lazy(() => import("./pages/TestDateRange/index"));
 const TestTabs = lazy(() => import("./pages/TestTabs/index"));
 const TestForm = lazy(() => import("./pages/TestForm/index"));
 const TestZIndex = lazy(() => import("./pages/TestZIndex/index"));
-// 测试react 的api
 const TestReactApi = lazy(() => import("./pages/TestReactApi/index"));
-
-const AllEchartsDemo = lazy(() => import("./pages/EchartsDemosPage/index"));
-
-// const baseUrl = "react-playground";
+const EchartsDemosPage = lazy(() => import("./pages/EchartsDemosPage/index"));
 
 const routes = [
   {
@@ -36,9 +32,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/AllEchartsDemo",
-    desc: "AllEchartsDemo",
-    component: AllEchartsDemo,
+    path: "/EchartsDemosPage",
+    desc: "Echarts Demos",
+    component: EchartsDemosPage,
   },
   {
     path: "/TestAHooks",
@@ -132,8 +128,4 @@ const routes = [
   },
 ];
 
-export default routes.slice(0, 1);
-// .map((it) => ({
-//   ...it,
-//   path: `/${baseUrl}${it.path}`,
-// }));
+export default routes.slice(0, 2);

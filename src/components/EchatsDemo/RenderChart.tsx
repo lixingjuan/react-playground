@@ -9,8 +9,8 @@ import {
   LegendComponent,
   DataZoomComponent,
   DatasetComponent,
-  TimelineComponent,
   MarkLineComponent,
+  GraphicComponent,
 } from "echarts/components";
 import { ScatterChart } from "echarts/charts";
 
@@ -27,7 +27,7 @@ echarts.use([
   PieChart,
   LineChart,
   ScatterChart,
-  TimelineComponent,
+  GraphicComponent,
   MarkLineComponent,
 ]);
 
