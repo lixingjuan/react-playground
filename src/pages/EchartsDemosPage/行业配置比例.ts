@@ -7,6 +7,33 @@ const colors = ["#5180FF", "#FF9749", "#1ABFB0"];
 
 window.moment = moment;
 
+const data1 = [
+  ["Mon", 12],
+  ["Tue", 13],
+  ["Wed", 10],
+  ["Thu", 13],
+  ["Fri", 9],
+  ["Sat", 23],
+  ["Sun", 21],
+];
+
+const data2 = [
+  ["Mon", 22],
+  ["Tue", 18],
+  ["Wed", 19],
+  ["Thu", 23],
+  ["Fri", 29],
+  ["Sat", 33],
+  ["Sun", 31],
+];
+
+const data3 = Array.from({ length: data1.length }).map((it, index) => {
+  const sumValue = Number(data1[index]?.[1]) + Number(data2[index]?.[1]);
+  return [data1[index]?.[0], 100 - sumValue];
+});
+
+console.log({ data3 });
+
 const forSeriesItem = (val: any[]) =>
   val.map(([date, value]) => [date, round(value, 2)]);
 
@@ -109,15 +136,7 @@ const option: EChartsOption = {
       emphasis: {
         focus: "series",
       },
-      data: [
-        ["Mon", 120],
-        ["Tue", 132],
-        ["Wed", 101],
-        ["Thu", 134],
-        ["Fri", 90],
-        ["Sat", 230],
-        ["Sun", 210],
-      ],
+      data: data1,
     },
     {
       name: "Union Ads",
@@ -127,26 +146,18 @@ const option: EChartsOption = {
       emphasis: {
         focus: "series",
       },
-      data: [
-        ["Mon", 220],
-        ["Tue", 182],
-        ["Wed", 191],
-        ["Thu", 234],
-        ["Fri", 290],
-        ["Sat", 330],
-        ["Sun", 310],
-      ],
+      data: data2,
     },
-    // {
-    //   name: "Video Ads",
-    //   type: "line",
-    //   stack: "Total",
-    //   areaStyle: {},
-    //   emphasis: {
-    //     focus: "series",
-    //   },
-    //   data: [150, 232, 201, 154, 190, 330, 410],
-    // },
+    {
+      name: "Video Ads",
+      type: "line",
+      stack: "Total",
+      areaStyle: {},
+      emphasis: {
+        focus: "series",
+      },
+      data: data3,
+    },
     // {
     //   name: "Direct",
     //   type: "line",
