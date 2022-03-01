@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { jsPDF as JsPDF } from "jspdf";
 import styled from "styled-components";
-import { Button } from "antd";
 
 import CodeEditor from "./components/CodeEditor";
 import Preview from "./components/Preview";
 import CodeHeader from "./components/CodeHeader";
 import PreviewHeader from "./components/PreviewHeader";
-import HighChartDemo from "../../components/HighChartDemo";
 import ChartAndCode from "./components/ChartAndCode/index";
 
 // import DemoAddTable from "./components/DemoAddTable";

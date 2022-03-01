@@ -12,12 +12,6 @@ const arr = Array.from({ length: 20 }).map((it, index) => ({
   tab: `tab${index}`,
 }));
 
-const tempArr = [
-  {
-    name: "1",
-    comp: () => <div>1</div>,
-  },
-];
 const TestTabsPage = () => {
   return (
     <div>

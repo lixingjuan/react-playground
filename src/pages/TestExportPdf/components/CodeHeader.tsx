@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Select } from "antd";
 import { AllProps } from "../type";
-// @ts-ignore
-
-const { Option } = Select;
 
 const DemoStyle = styled.header`
   height: 90px;

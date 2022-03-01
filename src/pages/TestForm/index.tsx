@@ -1,20 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Input } from "antd";
 
-function validatePrimeNumber(number: any) {
-  if (number > 10) {
-    return {
-      validateStatus: "success",
-      errorMsg: null,
-    };
-  }
-
-  return {
-    validateStatus: "error",
-    errorMsg: "The prime more than the 10!",
-  };
-}
-
 const formItemLayout = {
   labelCol: {
     span: 7,

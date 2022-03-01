@@ -10,6 +10,7 @@ import {
   DataZoomComponent,
   DatasetComponent,
   TimelineComponent,
+  MarkLineComponent,
 } from "echarts/components";
 import { ScatterChart } from "echarts/charts";
 
@@ -27,6 +28,7 @@ echarts.use([
   LineChart,
   ScatterChart,
   TimelineComponent,
+  MarkLineComponent,
 ]);
 
 /**
@@ -51,13 +53,6 @@ const RenderChart: React.FC<any> = ({ options, style = {} }) => {
   useEffect(() => {
     if (chartInstance) {
       chartInstance.setOption(options, true);
-
-      chartInstance.dispatchAction({
-        type: "showTip",
-        seriesIndex: 0,
-        dataIndex: 0,
-        name: "第一名",
-      });
     }
   }, [options, chartInstance]);
 

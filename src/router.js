@@ -25,6 +25,8 @@ const TestZIndex = lazy(() => import("./pages/TestZIndex/index"));
 // 测试react 的api
 const TestReactApi = lazy(() => import("./pages/TestReactApi/index"));
 
+const AllEchartsDemo = lazy(() => import("./pages/EchartsDemosPage/index"));
+
 // const baseUrl = "react-playground";
 
 const routes = [
@@ -32,6 +34,11 @@ const routes = [
     path: "/",
     desc: "Home",
     component: Home,
+  },
+  {
+    path: "/AllEchartsDemo",
+    desc: "AllEchartsDemo",
+    component: AllEchartsDemo,
   },
   {
     path: "/TestAHooks",
@@ -125,7 +132,7 @@ const routes = [
   },
 ];
 
-export default routes.slice(0,1);
+export default routes.slice(0, 1);
 // .map((it) => ({
 //   ...it,
 //   path: `/${baseUrl}${it.path}`,

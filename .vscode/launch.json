@@ -8,7 +8,7 @@
       "type": "chrome", // 用的是debug for chrome ,所以类型为chrome
       "request": "attach", // launch模式就是新窗口模式,attach是附加模式
       "name": "Chrome Attach",
-      "url": "http://localhost:9000/*", // 你项目的访问url
+      "url": "http://localhost:3000/*", // 你项目的访问url
       "webRoot": "${workspaceFolder}", // 项目根路径
       "port": 9222 // 映射端口,这里改了对应的启动地方也要改
     }

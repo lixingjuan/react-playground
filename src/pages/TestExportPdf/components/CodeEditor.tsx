@@ -5,7 +5,7 @@ import { jsPDF as JsPDF } from "jspdf";
 // @ts-ignore
 import CodeMirror from "react-codemirror";
 import { useDebounceEffect } from "ahooks";
-import { getInitCode, getInitTableCode } from "./constant";
+import { getInitCode } from "./constant";
 import autoTable from "jspdf-autotable";
 
 const StyledCodeMirror = styled(CodeMirror)`

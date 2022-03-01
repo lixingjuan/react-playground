@@ -28,6 +28,7 @@ const theMethods = [
   },
 ];
 
+console.log({ theMethods });
 export default function Index() {
   const editLocationHash = () => {
     window.location.hash = `${window.location.hash}/${+new Date()}`;
