@@ -9,6 +9,7 @@ import {
   LegendComponent,
   DataZoomComponent,
   DatasetComponent,
+  TimelineComponent,
 } from "echarts/components";
 import { ScatterChart } from "echarts/charts";
 
@@ -25,12 +26,13 @@ echarts.use([
   PieChart,
   LineChart,
   ScatterChart,
+  TimelineComponent,
 ]);
 
 /**
  * chart高度固定 宽度自适应（兼容图谱）
  * */
-const RenderChart: React.FC<any> = ({ options }) => {
+const RenderChart: React.FC<any> = ({ options, style = {} }) => {
   const contentChartRef = useRef<HTMLDivElement>(null);
   const [chartInstance, setChartInstance] = useState<echarts.ECharts | null>(
     null
@@ -49,6 +51,13 @@ const RenderChart: React.FC<any> = ({ options }) => {
   useEffect(() => {
     if (chartInstance) {
       chartInstance.setOption(options, true);
+
+      chartInstance.dispatchAction({
+        type: "showTip",
+        seriesIndex: 0,
+        dataIndex: 0,
+        name: "第一名",
+      });
     }
   }, [options, chartInstance]);
 
@@ -64,7 +73,7 @@ const RenderChart: React.FC<any> = ({ options }) => {
   return (
     <div
       ref={contentChartRef}
-      style={{ width: "800px", height: "600px" }}
+      style={{ width: "800px", height: "600px", ...style }}
     ></div>
   );
 };

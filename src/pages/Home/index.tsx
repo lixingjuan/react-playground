@@ -1,16 +1,12 @@
 import React from "react";
 import EchatsDemo from "../../components/EchatsDemo";
-import HighChartDemo from "../../components/HighChartDemo";
+import jingzhizoushi from "./净值走势";
 
 function HomePage() {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <HighChartDemo></HighChartDemo>
-      {/* <h1>HighChartDemo</h1>
-      <HighChartDemo /> */}
-
-      {/* <h1>EchatsDemo</h1>
-      <EchatsDemo /> */}
+      <h2>净值走势</h2>
+      <EchatsDemo options={jingzhizoushi} style={{ width: "100%" }} />
     </div>
   );
 }
