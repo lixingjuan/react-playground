@@ -1,6 +1,9 @@
 import moment from "moment";
 import { EChartsOption } from "echarts";
 import round from "lodash/round";
+import { to10Color } from "./utils";
+
+const colors = ["#5180FF", "#FF9749"];
 
 window.moment = moment;
 
@@ -253,7 +256,7 @@ const data1 = [
   [1645977600000, -0.07389647298599722, 0],
 ];
 
-const data2 = [] as any;
+const data2 = forSeriesItem(data1).map(([date, value]) => [date, -0.14]);
 
 const option: EChartsOption = {
   legend: {
@@ -264,7 +267,7 @@ const option: EChartsOption = {
       type: "solid",
     },
   },
-  color: ["#5180FF", "#FF9749", "#1ABFB0"],
+  color: colors,
   xAxis: {
     type: "time",
     axisLabel: {
@@ -286,11 +289,8 @@ const option: EChartsOption = {
   },
   tooltip: {
     trigger: "axis",
-    position(pt) {
-      return [pt[0], "10%"];
-    },
     appendToBody: true,
-    confine: true,
+    confine: false,
     renderMode: "html",
     hideDelay: 0,
     textStyle: {
@@ -303,6 +303,7 @@ const option: EChartsOption = {
         width: 2,
         type: "solid",
       },
+      z: 0,
     },
     formatter: (params) => {
       if (!Array.isArray(params)) {
@@ -319,7 +320,7 @@ const option: EChartsOption = {
         const [, yAxisValue] = data as any[];
 
         return `${tol}
-        <li style="list-style:none;display:flex;justify-content:space-between;">
+        <li style="list-style:none;display:flex;justify-content:space-between;align-items:center">
           <span style="display:flex;height:14px;align-items:center;">
             ${(marker as string).replace(
               "border-radius:10px;width:10px;height:10px;",
@@ -345,37 +346,40 @@ const option: EChartsOption = {
       name: "目标方案",
       type: "line",
       smooth: 0.3,
+      symbol: "circle",
+      symbolSize: 4,
       showSymbol: false,
-      symbol: "round",
       data: forSeriesItem(data1),
       areaStyle: {
-        color: "rgba(81,128,255,0.4)",
+        color: `rgba(${to10Color(colors[0])}, 0.4)`,
       },
       lineStyle: {
         width: 1,
       },
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[0])}, 0.4)`,
+        },
+      },
     },
     {
-      name: "最大回撤(1.54%)",
+      name: "最大回撤",
       type: "line",
       smooth: 0.3,
+      data: data2,
+      symbol: "circle",
+      symbolSize: 4,
       showSymbol: false,
-      symbol: "round",
-      data: [],
-      markLine: {
-        symbol: "none",
-        label: {
-          show: false,
+      lineStyle: {
+        width: 1,
+        type: "dashed",
+      },
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[1])}, 0.4)`,
         },
-        lineStyle: {
-          color: "#FF9749",
-          width: 1,
-        },
-        data: [
-          {
-            yAxis: "-0.14",
-          },
-        ],
       },
     },
   ],

@@ -1,6 +1,9 @@
 import moment from "moment";
 import { EChartsOption } from "echarts";
 import round from "lodash/round";
+import { to10Color } from "./utils";
+
+const colors = ["#5180FF", "#FF9749", "#1ABFB0"];
 
 window.moment = moment;
 
@@ -620,7 +623,7 @@ const option: EChartsOption = {
       type: "solid",
     },
   },
-  color: ["#5180FF", "#FF9749", "#1ABFB0"],
+  color: colors,
   graphic: [
     {
       type: "group",
@@ -710,11 +713,8 @@ const option: EChartsOption = {
   },
   tooltip: {
     trigger: "axis",
-    position(pt) {
-      return [pt[0], "10%"];
-    },
     appendToBody: true,
-    confine: true,
+    confine: false,
     renderMode: "html",
     hideDelay: 0,
     textStyle: {
@@ -727,6 +727,7 @@ const option: EChartsOption = {
         width: 2,
         type: "solid",
       },
+      z: 0,
     },
     formatter: (params) => {
       if (!Array.isArray(params)) {
@@ -743,7 +744,7 @@ const option: EChartsOption = {
         const [, yAxisValue] = data as any[];
 
         return `${tol}
-        <li style="list-style:none;display:flex;justify-content:space-between;">
+        <li style="list-style:none;display:flex;justify-content:space-between;align-items:center">
           <span style="display:flex;height:14px;align-items:center;">
             ${(marker as string).replace(
               "border-radius:10px;width:10px;height:10px;",
@@ -772,7 +773,17 @@ const option: EChartsOption = {
       showSymbol: false,
       symbol: "roundRect",
       data: forSeriesItem(data1),
+      symbolSize: 4,
+      lineStyle: {
+        width: 2,
+      },
       markLine,
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[0])}, 0.4)`,
+        },
+      },
     },
     {
       name: "分析基准",
@@ -781,6 +792,16 @@ const option: EChartsOption = {
       showSymbol: false,
       symbol: "roundRect",
       data: forSeriesItem(data2),
+      symbolSize: 4,
+      lineStyle: {
+        width: 2,
+      },
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[1])}, 0.4)`,
+        },
+      },
     },
     {
       name: "超额收益",
@@ -789,6 +810,16 @@ const option: EChartsOption = {
       showSymbol: false,
       symbol: "roundRect",
       data: forSeriesItem(data3),
+      symbolSize: 4,
+      lineStyle: {
+        width: 2,
+      },
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[2])}, 0.4)`,
+        },
+      },
     },
   ],
 };
