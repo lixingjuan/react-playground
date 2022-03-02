@@ -1,3 +1,6 @@
 [submodule "packages/hooks"]
 	path = packages/hooks
 	url = https://github.com/alibaba/hooks.git
+[submodule "packages/antd"]
+	path = packages/antd
+	url = git@github.com:ant-design/ant-design.git
