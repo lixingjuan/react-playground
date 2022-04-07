@@ -1,7 +1,7 @@
 import moment from "moment";
 import { EChartsOption } from "echarts";
 import round from "lodash/round";
-import { to10Color } from "./utils";
+import { to10Color, padZeroTail } from "../../utils";
 
 const colors = ["#5180FF", "#FF9749", "#1ABFB0"];
 
@@ -23,8 +23,7 @@ const markLine = {
   ],
 } as any;
 
-const forSeriesItem = (val: any[]) =>
-  val.map(([date, value]) => [date, round(value, 2)]);
+const forSeriesItem = (val: any[]) => val.map(([date, value]) => [date, round(value, 2)]);
 
 const data1 = [
   [1614556800000, 1],
@@ -703,7 +702,7 @@ const option: EChartsOption = {
     type: "value",
     axisLabel: {
       hideOverlap: true,
-      formatter: "{value}%",
+      formatter: (val: any) => padZeroTail(val),
     },
     splitLine: {
       lineStyle: {

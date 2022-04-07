@@ -1,6 +1,7 @@
 import { lazy } from "react";
 
 const Home = lazy(() => import("./pages/Home/index"));
+const ContextAndHook = lazy(() => import("./pages/ContextAndHook/index"));
 const TestAHooks = lazy(() => import("./pages/TestAHooks"));
 const TestKey = lazy(() => import("./pages/TestKey"));
 const TestExportPdf = lazy(() => import("./pages/TestExportPdf"));
@@ -12,18 +13,14 @@ const TestSWR = lazy(() => import("./pages/TestSWR"));
 const TestResizable = lazy(() => import("./pages/TestResizable/index"));
 const TestFlexTable = lazy(() => import("./pages/TestFlexTable"));
 const TestScrollTable = lazy(() => import("./pages/TestScrollTable/index"));
-const TestReducerAndContext = lazy(() =>
-  import("./pages/TestReducerAndContext/index")
-);
-const TestCallChildMethod = lazy(() =>
-  import("./pages/TestCallChildMethod/index")
-);
+const TestReducerAndContext = lazy(() => import("./pages/TestReducerAndContext/index"));
+const TestCallChildMethod = lazy(() => import("./pages/TestCallChildMethod/index"));
 const TestDateRange = lazy(() => import("./pages/TestDateRange/index"));
 const TestTabs = lazy(() => import("./pages/TestTabs/index"));
 const TestForm = lazy(() => import("./pages/TestForm/index"));
 const TestZIndex = lazy(() => import("./pages/TestZIndex/index"));
 const TestReactApi = lazy(() => import("./pages/TestReactApi/index"));
-const EchartsDemosPage = lazy(() => import("./pages/EchartsDemosPage/index"));
+const EchartsCollections = lazy(() => import("./pages/EchartsCollections/index"));
 
 const routes = [
   {
@@ -32,9 +29,14 @@ const routes = [
     component: Home,
   },
   {
-    path: "/EchartsDemosPage",
+    path: "/EchartsCollections",
     desc: "Echarts Demos",
-    component: EchartsDemosPage,
+    component: EchartsCollections,
+  },
+  {
+    path: "/ContextAndHook",
+    desc: "ContextAndHook",
+    component: ContextAndHook,
   },
   {
     path: "/TestAHooks",
@@ -128,4 +130,4 @@ const routes = [
   },
 ];
 
-export default routes.slice(0, 2);
+export default routes;

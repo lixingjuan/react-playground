@@ -1,71 +1,71 @@
 import moment from "moment";
 import { EChartsOption } from "echarts";
 import round from "lodash/round";
-import { to10Color } from "./utils";
+import { to10Color, padZeroTail } from "./utils";
 
 const colors = ["#5180FF", "#FF9749", "#1ABFB0"];
 
 window.moment = moment;
 
 const data1 = [
-  ["Mon", 12],
-  ["Tue", 13],
-  ["Wed", 10],
-  ["Thu", 13],
-  ["Fri", 9],
-  ["Sat", 23],
-  ["Sun", 21],
+  ["2021-02-03", 12],
+  ["2021-02-04", 13],
+  ["2021-02-05", 10],
+  ["2021-02-06", 13],
+  ["2021-02-07", 9],
+  ["2021-02-08", 23],
+  ["2021-02-09", 21],
 ];
 
 const data2 = [
-  ["Mon", 22],
-  ["Tue", 18],
-  ["Wed", 19],
-  ["Thu", 23],
-  ["Fri", 29],
-  ["Sat", 33],
-  ["Sun", 31],
+  ["2021-02-03", 22],
+  ["2021-02-04", 18],
+  ["2021-02-05", 19],
+  ["2021-02-06", 23],
+  ["2021-02-07", 29],
+  ["2021-02-08", 33],
+  ["2021-02-09", 31],
 ];
 
 const data3 = Array.from({ length: data1.length }).map((it, index) => {
   const sumValue = Number(data1[index]?.[1]) + Number(data2[index]?.[1]);
-  return [data1[index]?.[0], 100 - sumValue];
+  return [data1[index]?.[0], round(100 - sumValue, 2)];
 });
 
-console.log({ data3 });
-
-const forSeriesItem = (val: any[]) =>
-  val.map(([date, value]) => [date, round(value, 2)]);
-
 const option: EChartsOption = {
+  aria: {
+    enabled: true,
+    decal: {
+      show: true,
+      decals: {
+        symbol: "rect",
+      },
+    },
+  },
   legend: {
-    itemHeight: 0,
+    itemHeight: 2,
     itemWidth: 10,
     left: 140,
     lineStyle: {
       type: "solid",
     },
+    itemStyle: {},
   },
   color: colors,
-  // xAxis: {
-  //   type: "time",
-  //   axisLabel: {
-  //     hideOverlap: true,
-  //     formatter: "{yyyy}-{MM}-{dd}",
-  //   },
-  // },
   xAxis: [
     {
       type: "category",
       boundaryGap: false,
-      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      axisLabel: {
+        hideOverlap: true,
+      },
     },
   ],
   yAxis: {
     type: "value",
     axisLabel: {
       hideOverlap: true,
-      formatter: "{value}%",
+      formatter: (val: any) => padZeroTail(val),
     },
     splitLine: {
       lineStyle: {
@@ -131,57 +131,67 @@ const option: EChartsOption = {
     {
       name: "Email",
       type: "line",
+      smooth: 0.3,
+      showSymbol: false,
       stack: "Total",
-      areaStyle: {},
-      emphasis: {
-        focus: "series",
+      areaStyle: {
+        color: `rgba(${to10Color(colors[0])}, 0.4)`,
       },
       data: data1,
+      symbol: "roundRect",
+      symbolSize: 4,
+      lineStyle: {
+        width: 2,
+      },
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[0])}, 0.4)`,
+        },
+      },
     },
     {
       name: "Union Ads",
       type: "line",
+      showSymbol: false,
       stack: "Total",
-      areaStyle: {},
-      emphasis: {
-        focus: "series",
+      areaStyle: {
+        color: `rgba(${to10Color(colors[1])}, 0.4)`,
       },
       data: data2,
+      symbol: "roundRect",
+      symbolSize: 4,
+      lineStyle: {
+        width: 2,
+      },
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[1])}, 0.4)`,
+        },
+      },
     },
     {
       name: "Video Ads",
       type: "line",
+      showSymbol: false,
       stack: "Total",
-      areaStyle: {},
-      emphasis: {
-        focus: "series",
+      areaStyle: {
+        color: `rgba(${to10Color(colors[2])}, 0.4)`,
       },
       data: data3,
+      symbol: "roundRect",
+      symbolSize: 4,
+      lineStyle: {
+        width: 2,
+      },
+      emphasis: {
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: `rgba(${to10Color(colors[2])}, 0.4)`,
+        },
+      },
     },
-    // {
-    //   name: "Direct",
-    //   type: "line",
-    //   stack: "Total",
-    //   areaStyle: {},
-    //   emphasis: {
-    //     focus: "series",
-    //   },
-    //   data: [320, 332, 301, 334, 390, 330, 320],
-    // },
-    // {
-    //   name: "Search Engine",
-    //   type: "line",
-    //   stack: "Total",
-    //   label: {
-    //     show: true,
-    //     position: "top",
-    //   },
-    //   areaStyle: {},
-    //   emphasis: {
-    //     focus: "series",
-    //   },
-    //   data: [820, 932, 901, 934, 1290, 1330, 1320],
-    // },
   ],
 };
 

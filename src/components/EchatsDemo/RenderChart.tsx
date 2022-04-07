@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as echarts from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
-import { BarChart, PieChart, LineChart } from "echarts/charts";
+import { BarChart, PieChart, LineChart, ThemeRiverChart } from "echarts/charts";
 import {
   TitleComponent,
   GridComponent,
@@ -36,16 +36,12 @@ echarts.use([
  * */
 const RenderChart: React.FC<any> = ({ options, style = {} }) => {
   const contentChartRef = useRef<HTMLDivElement>(null);
-  const [chartInstance, setChartInstance] = useState<echarts.ECharts | null>(
-    null
-  );
+  const [chartInstance, setChartInstance] = useState<echarts.ECharts | null>(null);
 
   /** 实例化chart 一次即可 */
   useEffect(() => {
     if (contentChartRef?.current) {
-      const chartInstance = echarts.init(
-        contentChartRef?.current as HTMLDivElement
-      );
+      const chartInstance = echarts.init(contentChartRef?.current as HTMLDivElement);
       setChartInstance(chartInstance);
     }
   }, []);
@@ -65,12 +61,7 @@ const RenderChart: React.FC<any> = ({ options, style = {} }) => {
     };
   }, [chartInstance]);
 
-  return (
-    <div
-      ref={contentChartRef}
-      style={{ width: "800px", height: "600px", ...style }}
-    ></div>
-  );
+  return <div ref={contentChartRef} style={{ width: "800px", height: "600px" }}></div>;
 };
 
 export default React.memo(RenderChart);
