@@ -23,11 +23,7 @@ const SelectSizesDemo = () => {
 
   return (
     <>
-      <Select
-        value={2}
-        style={{ width: 300 }}
-        placeholder="custom dropdown render"
-      >
+      <Select value={2} style={{ width: 300 }} placeholder="custom dropdown render">
         {items.map((item) => (
           <div key={item}>
             <Checkbox></Checkbox>
@@ -35,24 +31,6 @@ const SelectSizesDemo = () => {
           </div>
         ))}
       </Select>
-
-      {/* <Select
-        size={size}
-        defaultValue="a1"
-        onChange={handleChange}
-        style={{ width: 200 }}
-        dropdownRender={
-          <>
-            <li>hello</li>
-            <li>world</li>
-            <li>silly</li>
-          </>
-        }
-      /> */}
-      {/* <div>
-          <Checkbox />
-        </div>
-      </Select> */}
     </>
   );
 };

@@ -7,11 +7,8 @@ import Menu from "./components/Menu";
 import routes from "./router";
 
 const AppStyled = styled.div`
-  display: flex;
-  .content {
-    flex: 2;
-    padding: 50px;
-  }
+  display: grid;
+  grid-template-columns: max-content 1fr;
 `;
 
 function App() {
