@@ -1,32 +1,43 @@
-import { Suspense } from "react";
-import "./App.css";
-import { Switch, Route } from "react-router";
-import styled from "styled-components";
-
-import Menu from "./components/Menu";
 import routes from "./router";
+import { Route, NavLink } from "react-router-dom";
+import styled from "styled-components";
+import "./App.css";
 
-const AppStyled = styled.div`
-  display: grid;
-  grid-template-columns: max-content 1fr;
+const StyleApp = styled.div`
+  ul#menu {
+    background-color: #f7f7f7;
+    margin: 0px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+  }
+
+  hr {
+    margin-top: 0;
+  }
 `;
+const App = () => (
+  <StyleApp>
+    <ul id="menu">
+      {routes.map(({ path, name }) => (
+        <li>
+          <NavLink key={path} to={path} activeClassName="active-nav-link" className="nav-link">
+            {name}
+          </NavLink>
+        </li>
+      ))}
+    </ul>
 
-function App() {
-  return (
-    <AppStyled className="App">
-      <Menu routes={routes} />
+    <hr
+      style={{
+        borderWidth: "2px",
+      }}
+    />
 
-      <div className="content">
-        <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            {routes.map((it) => (
-              <Route exact key={it.path} path={it.path} component={it.component} />
-            ))}
-          </Switch>
-        </Suspense>
-      </div>
-    </AppStyled>
-  );
-}
+    {routes.map(({ path, component }) => (
+      <Route key={path} path={path} component={component} />
+    ))}
+  </StyleApp>
+);
 
 export default App;

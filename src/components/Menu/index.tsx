@@ -21,8 +21,15 @@ function MenuComp(props: any) {
     () => ({
       items: routes.map((it: any) => ({
         ...it,
-        key: it.desc,
-        label: <NavLink to={it.path}>{it.desc}</NavLink>,
+        key: it.path,
+        label: <NavLink to={it.path}>{it.name}</NavLink>,
+        children: it.routes
+          ? (it.routes || []).map((inner: any) => ({
+              ...inner,
+              key: inner.path,
+            label: <NavLink to={`${it.path}${inner.path}`}>{inner.name}</NavLink>,
+            }))
+          : undefined,
       })),
       defaultSelectedKeys: [routes?.[0]?.desc],
     }),

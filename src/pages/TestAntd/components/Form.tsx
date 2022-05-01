@@ -12,27 +12,6 @@ const layout = {
 const Demo = () => {
   const [form] = Form.useForm();
 
-  // const onGenderChange = (value: any) => {
-  //   switch (value) {
-  //     case "male":
-  //       form.setFieldsValue({
-  //         note: "Hi, man!",
-  //       });
-  //       return;
-
-  //     case "female":
-  //       form.setFieldsValue({
-  //         note: "Hi, lady!",
-  //       });
-  //       return;
-
-  //     case "other":
-  //       form.setFieldsValue({
-  //         note: "Hi there!",
-  //       });
-  //   }
-  // };
-
   const onFinish = (values: any) => {
     console.log(values);
   };
