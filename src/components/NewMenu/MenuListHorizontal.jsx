@@ -22,9 +22,7 @@ export default function MenuList() {
 
     const left =
       Math.floor(
-        offsetActiveItem.left -
-          MenuRef.current.offsetLeft -
-          (menuBorder.offsetLeft - offsetActiveItem.height) / 2
+        offsetActiveItem.left - MenuRef.current.offsetLeft - (menuBorder.offsetLeft - offsetActiveItem.height) / 2
       ) + "px";
 
     menuBorder.style.transform = `translate3d(${left}, 100px , 0) rotate(180deg)`;

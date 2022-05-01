@@ -11,7 +11,7 @@ const TestDateRange = () => {
 
   return (
     <div>
-      {/* <DateRangePicker date={date} setDate={setDate} /> */}
+      <DateRangePicker date={date} setDate={setDate} />
       <NotExceed7Days date={date} setDate={setDate} />
     </div>
   );

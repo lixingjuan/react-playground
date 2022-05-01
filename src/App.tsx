@@ -1,61 +1,35 @@
-// import React, { Suspense } from "react";
-// import "./App.css";
-// import { Switch, Route } from "react-router";
-// import styled from "styled-components";
+import { Suspense } from "react";
+import "./App.css";
+import { Switch, Route } from "react-router";
+import styled from "styled-components";
 
-// import AppMenu from "./components/Menu";
-// // import NewMenu from "./components/NewMenu";
-// import routes from "./router";
+import Menu from "./components/Menu";
+import routes from "./router";
 
-// const AppStyled = styled.div`
-//   display: flex;
-//   .content {
-//     flex: 2;
-//     padding: 50px;
-//   }
-// `;
+const AppStyled = styled.div`
+  display: flex;
+  .content {
+    flex: 2;
+    padding: 50px;
+  }
+`;
 
-// function App() {
-//   return (
-//     <AppStyled className="App">
-
-//       <AppMenu routes={routes} />
-
-//       <div className="content">
-//         <Suspense fallback={<div>Loading...</div>}>
-//           <Switch>
-//             {routes.map((it) => (
-//               <Route
-//                 exact
-//                 key={it.path}
-//                 path={it.path}
-//                 component={it.component}
-//               />
-//             ))}
-//           </Switch>
-//         </Suspense>
-//       </div>
-//     </AppStyled>
-//   );
-// }
-
-// export default App;
-
-import React from "react";
-import { useBoolean } from "ahooks";
-import { Button, Modal } from "antd";
-
-const Demo = () => {
-  const [visible, { setFalse, setTrue }] = useBoolean(false);
-
+function App() {
   return (
-    <div>
-      <Button onClick={setTrue}>Open</Button>
-      <Modal visible={visible} onCancel={setFalse}>
-        hello
-      </Modal>
-    </div>
-  );
-};
+    <AppStyled className="App">
+      <Menu routes={routes} />
 
-export default Demo;
+      <div className="content">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            {routes.map((it) => (
+              <Route exact key={it.path} path={it.path} component={it.component} />
+            ))}
+          </Switch>
+        </Suspense>
+      </div>
+    </AppStyled>
+  );
+}
+
+export default App;

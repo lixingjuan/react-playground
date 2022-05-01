@@ -17,13 +17,11 @@ function MenuComp(props) {
     location: { pathname },
   } = useHistory();
 
-  const defaultSelectedKeys =
-    routes.find((it) => it.path === pathname)?.desc || "Home";
+  const defaultSelectedKeys = routes.find((it) => it.path === pathname)?.desc || "Home";
 
   return (
     <MenuStyle>
       <Button onClick={setCollapsed}>collapsed</Button>
-      collapsed{`${collapsed}`}
       <Menu
         mode={"inline"}
         style={{ height: "100vh" }}

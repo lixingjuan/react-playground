@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "DOM",
-      "ES2019",
-      "ES2020"
-    ],
+    "lib": ["DOM", "ES2019", "ES2020"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,18 +18,10 @@
     "plugins": [
       {
         "name": "typescript-styled-plugin",
-        "tags": [
-          "styled",
-          "css",
-          "sty"
-        ]
+        "tags": ["styled", "css", "sty"]
       }
     ]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "packages"
-  ]
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["packages"]
 }
