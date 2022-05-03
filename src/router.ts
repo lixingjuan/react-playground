@@ -27,14 +27,15 @@ import TestAntd from "./pages/TestAntd";
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-  {
     path: "/antd",
     name: "测试TestAntd",
     component: TestAntd,
+  },
+  {
+    path: "/",
+    name: "Home",
+    component: Home,
+    exact: true,
   },
   // {
   //   path: "/EchartsCollections",

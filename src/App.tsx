@@ -1,7 +1,9 @@
 import routes from "./router";
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink, Switch } from "react-router-dom";
 import styled from "styled-components";
 import "./App.css";
+import Home from "./pages/Home/index";
+import TestAntd from "./pages/TestAntd";
 
 const StyleApp = styled.div`
   ul#menu {
@@ -19,9 +21,9 @@ const StyleApp = styled.div`
 const App = () => (
   <StyleApp>
     <ul id="menu">
-      {routes.map(({ path, name }) => (
+      {routes.map(({ path, name, exact }) => (
         <li>
-          <NavLink key={path} to={path} activeClassName="active-nav-link" className="nav-link">
+          <NavLink key={path} to={path} activeClassName="active-nav-link" className="nav-link" exact={exact}>
             {name}
           </NavLink>
         </li>
@@ -34,9 +36,11 @@ const App = () => (
       }}
     />
 
-    {routes.map(({ path, component }) => (
-      <Route key={path} path={path} component={component} />
-    ))}
+    <Switch>
+      {routes.map(({ path, component, exact = false }) => (
+        <Route key={path} path={path} component={component} exact={exact} />
+      ))}
+    </Switch>
   </StyleApp>
 );
 
